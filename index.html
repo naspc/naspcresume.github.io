@@ -266,15 +266,14 @@
           </ul>
         </div> 
       </section>
-
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="resume">
         <div class="my-auto">
             <h2 class="mb-5">Resume</h2>
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between align-items-start">
                 <a class="btn content-download button-main button-scheme" href="path/to/your_resume.pdf" download="Your_Resume_Name.pdf">
                     Download Resume
                 </a>
-                <form onsubmit="send(); reset(); return false;" name ="submit-to-google-sheet" class="contact-form" method="POST">
+                <form name="submit-to-google-sheet"  action="https://script.google.com/macros/s/AKfycbz98Zf588UgbglU7GQDfO6IxzTYdNmnyG5FcerGuqVU3yJ8K_YMymbq6FZZ1FRCSagOeg/exec" class="contact-form" method="POST" onsubmit="return handleSubmit(event)">
                     <div class="form-group">
                         <label for="name">Your Name</label>
                         <input type="text" id="name" name="name" class="form-control" required>
@@ -289,10 +288,11 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
-                <span id="msg"></span>
+                <span id="msg" class="form-message"></span>
             </div>
         </div>
     </section>
+    
     <!-- changed name in google sheet-->
     
     </div>
