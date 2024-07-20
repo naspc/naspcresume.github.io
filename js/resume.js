@@ -38,5 +38,5 @@ function hideConfirmation() {
 function downloadResume() {
   hideConfirmation();
   // Add the path to your resume PDF file below
-  window.location.href = 'path/to/your_resume.pdf';
+  window.location.href = 'img/your_resume.pdf';
 }
