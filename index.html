@@ -274,7 +274,7 @@
                 <a class="btn content-download button-main button-scheme" href="path/to/your_resume.pdf" download="Your_Resume_Name.pdf">
                     Download Resume
                 </a>
-                <form class="contact-form" action="submit_form.php" method="POST">
+                <form onsubmit="send(); reset(); return false;" name ="submit-to-google-sheet" class="contact-form" method="POST">
                     <div class="form-group">
                         <label for="name">Your Name</label>
                         <input type="text" id="name" name="name" class="form-control" required>
@@ -289,6 +289,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
+                <span id="msg"></span>
             </div>
         </div>
     </section>
@@ -305,6 +306,7 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/resume.min.js"></script>
+    <script src="js/contact.js"></script>
 
   </body>
 
