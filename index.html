@@ -266,33 +266,33 @@
           </ul>
         </div> 
       </section>
+
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="resume">
         <div class="my-auto">
             <h2 class="mb-5">Resume</h2>
-            <div class="d-flex justify-content-between align-items-start">
+            <div class="d-flex justify-content-between">
                 <a class="btn content-download button-main button-scheme" href="path/to/your_resume.pdf" download="Your_Resume_Name.pdf">
                     Download Resume
                 </a>
-                <form name="submit-to-google-sheet"  action="https://script.google.com/macros/s/AKfycbz98Zf588UgbglU7GQDfO6IxzTYdNmnyG5FcerGuqVU3yJ8K_YMymbq6FZZ1FRCSagOeg/exec" class="contact-form" method="POST" onsubmit="return handleSubmit(event)">
+                <form onsubmit="send(); reset(); return false;" name ="submit-to-google-sheet" class="contact-form">
                     <div class="form-group">
                         <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
+                        <input type="text" id="name" name="Name" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Your Email</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
+                        <input type="email" id="email" name="Email" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="message">Your Message</label>
-                        <textarea id="message" name="message" class="form-control" required></textarea>
+                        <textarea id="message" name="Message" class="form-control" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
-                <span id="msg" class="form-message"></span>
+                <span id="msg"></span>
             </div>
         </div>
     </section>
-    
     <!-- changed name in google sheet-->
     
     </div>

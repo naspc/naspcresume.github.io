@@ -1,22 +1,16 @@
-function handleSubmit(event) {
-    event.preventDefault();  // Prevent the default form submission
-    const form = event.target;
-    const data = new FormData(form);
-    const scriptURL = form.action;  // Retrieve the action attribute from the form
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbz98Zf588UgbglU7GQDfO6IxzTYdNmnyG5FcerGuqVU3yJ8K_YMymbq6FZZ1FRCSagOeg/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById("msg")
 
-    fetch(scriptURL, { method: 'POST', body: data })
-        .then(response => response.json())  // Assuming the Google Script returns JSON
-        .then(data => {
-            document.getElementById("msg").textContent = "Message has been sent successfully";
-            setTimeout(() => {
-                document.getElementById("msg").textContent = "";
-            }, 5000);
-            form.reset();  // Reset the form after successful submission
-        })
-        .catch(error => {
-            console.error('Error!', error.message);
-            document.getElementById("msg").textContent = "Failed to send message. Please try again.";
-        });
-
-    return false;
-}
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg.innerHTML = "Message has been sent successfully"
+        setTimeout(function() {
+            msg.innerHTML = ""
+        },5000)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
