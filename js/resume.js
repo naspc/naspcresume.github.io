@@ -1,7 +1,7 @@
 (function($) {
   "use strict"; // Start of use strict
 
-  // Existing Smooth Scrolling
+  // Smooth scrolling using jQuery easing
   $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
@@ -15,30 +15,14 @@
     }
   });
 
-  // Existing Menu Close Behavior
+  // Closes responsive menu when a scroll trigger link is clicked
   $('.js-scroll-trigger').click(function() {
     $('.navbar-collapse').collapse('hide');
   });
 
-  // Existing Scrollspy Activation
+  // Activate scrollspy to add active class to navbar items on scroll
   $('body').scrollspy({
     target: '#sideNav'
-  });
-
-  // Download Button Confirmation Dialog
-  $('#downloadButton').click(function() {
-    $('#confirmationDialog').fadeIn(); // Use fadeIn for smooth display
-  });
-
-  // Download Resume after Confirmation
-  $('#confirmationYes').click(function() {
-    $('#confirmationDialog').fadeOut(); // Use fadeOut for smooth hiding
-    window.location.href = 'img/your_resume.pdf'; // Update with the correct path to your resume
-  });
-
-  // Hide Confirmation Dialog
-  $('#confirmationNo').click(function() {
-    $('#confirmationDialog').fadeOut(); // Use fadeOut for smooth hiding
   });
 
 })(jQuery); // End of use strict
