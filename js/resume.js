@@ -26,3 +26,17 @@
   });
 
 })(jQuery); // End of use strict
+
+document.getElementById('downloadButton').addEventListener('click', function() {
+  document.getElementById('confirmationDialog').style.display = 'block';
+});
+
+function hideConfirmation() {
+  document.getElementById('confirmationDialog').style.display = 'none';
+}
+
+function downloadResume() {
+  hideConfirmation();
+  // Add the path to your resume PDF file below
+  window.location.href = 'path/to/your_resume.pdf';
+}
