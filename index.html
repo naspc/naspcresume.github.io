@@ -29,7 +29,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-block d-lg-none">Start Bootstrap</span>
+        <span class="d-block d-lg-none"> Welcome</span>
         <span class="d-none d-lg-block">
           <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpeg" alt="">
         </span>
@@ -270,12 +270,29 @@
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="resume">
         <div class="my-auto">
             <h2 class="mb-5">Resume</h2>
-            <p>This is where the resume will be.</p>
-            <a class="btn content-download button-main button-scheme" href="img/your_resume.pdf" download="your_resume.pdf">
-                Download Resume hereeee
-            </a>
+            <div class="d-flex justify-content-between">
+                <a class="btn content-download button-main button-scheme" href="path/to/your_resume.pdf" download="Your_Resume_Name.pdf">
+                    Download Resume
+                </a>
+                <form class="contact-form" action="submit_form.php" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
         </div>
     </section>
+    
     
     </div>
 

@@ -30,3 +30,37 @@
 .download-btn:hover {
     opacity: 1;
 }
+
+
+.resume-section .d-flex {
+    align-items: flex-start; /* Align items at the top */
+    justify-content: space-between; /* Space between the download button and the form */
+}
+
+.contact-form {
+    width: 50%; /* Set form width. Adjust as necessary */
+    padding-left: 20px; /* Space between button and form */
+}
+
+.form-group {
+    margin-bottom: 1rem; /* Space between form fields */
+}
+
+.form-control {
+    width: 100%; /* Full width of the form */
+    padding: 0.375rem 0.75rem; /* Padding inside the input */
+    margin-top: 0.375rem; /* Space above inputs */
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .contact-form {
+        width: 100%; /* Full width on smaller screens */
+    }
+}
