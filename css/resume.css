@@ -113,3 +113,17 @@ a {
   color: #BD5D38; }
   a:hover, a:focus, a:active {
     color: #824027; }
+    #comparison-container {
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
+  }
+  
+  .player-stats {
+      flex: 1;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background: #f9f9f9;
+  }
+  
