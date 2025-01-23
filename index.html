@@ -336,74 +336,84 @@
   </section>
   
   <script>
-      document.addEventListener("DOMContentLoaded", function () {
-          const apiBaseUrl = "https://www.balldontlie.io/api/v1/";
-          const lebronId = 237; // LeBron James ID in balldontlie API
-  
-          async function fetchPlayerStats(playerId) {
-              const response = await fetch(`${apiBaseUrl}players/${playerId}`);
-              const playerData = await response.json();
-  
-              const seasonAveragesResponse = await fetch(`${apiBaseUrl}season_averages?player_ids[]=${playerId}`);
-              const seasonStats = await seasonAveragesResponse.json();
-  
-              return { playerData, stats: seasonStats.data[0] };
-          }
-  
-          async function displayPlayerStats(containerId, playerId) {
-              const container = document.getElementById(containerId);
-              container.innerHTML = "Loading stats...";
-  
-              try {
-                  const { playerData, stats } = await fetchPlayerStats(playerId);
-  
-                  if (!stats) {
-                      container.innerHTML = `<p>No stats available for ${playerData.first_name} ${playerData.last_name}.</p>`;
-                      return;
-                  }
-  
-                  container.innerHTML = `
-                      <h3>${playerData.first_name} ${playerData.last_name}</h3>
-                      <ul>
-                          <li>Points Per Game (PPG): ${stats.pts}</li>
-                          <li>Assists Per Game (APG): ${stats.ast}</li>
-                          <li>Rebounds Per Game (RPG): ${stats.reb}</li>
-                          <li>Steals Per Game (SPG): ${stats.stl}</li>
-                          <li>Blocks Per Game (BPG): ${stats.blk}</li>
-                      </ul>
-                  `;
-              } catch (error) {
-                  console.error("Error fetching player stats:", error);
-                  container.innerHTML = `<p>Error loading stats. Please try again later.</p>`;
-              }
-          }
-  
-          // Initial display for LeBron James
-          displayPlayerStats("lebron-stats", lebronId);
-  
-          document.getElementById("compare-button").addEventListener("click", async function () {
-              const playerName = document.getElementById("player-search").value;
-  
-              try {
-                  // Search for the player by name
-                  const searchResponse = await fetch(`${apiBaseUrl}players?search=${playerName}`);
-                  const searchResults = await searchResponse.json();
-  
-                  if (searchResults.data.length === 0) {
-                      alert("Player not found. Please try another name.");
-                      return;
-                  }
-  
-                  // Use the first search result for comparison
-                  const selectedPlayer = searchResults.data[0];
-                  displayPlayerStats("other-player-stats", selectedPlayer.id);
-              } catch (error) {
-                  console.error("Error searching for player:", error);
-                  alert("An error occurred. Please try again.");
-              }
-          });
-      });
-  </script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const apiBaseUrl = "https://cors-anywhere.herokuapp.com/https://www.balldontlie.io/api/v1/";
+        const lebronId = 237; // LeBron James ID in balldontlie API
+
+        async function fetchPlayerStats(playerId) {
+            try {
+                const playerResponse = await fetch(`${apiBaseUrl}players/${playerId}`);
+                const playerData = await playerResponse.json();
+
+                const seasonAveragesResponse = await fetch(`${apiBaseUrl}season_averages?player_ids[]=${playerId}`);
+                const seasonStats = await seasonAveragesResponse.json();
+
+                return { playerData, stats: seasonStats.data[0] };
+            } catch (error) {
+                console.error("Error fetching player stats:", error);
+                throw error;
+            }
+        }
+
+        async function displayPlayerStats(containerId, playerId) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = "Loading stats...";
+
+            try {
+                const { playerData, stats } = await fetchPlayerStats(playerId);
+
+                if (!stats) {
+                    container.innerHTML = `<p>No stats available for ${playerData.first_name} ${playerData.last_name}.</p>`;
+                    return;
+                }
+
+                container.innerHTML = `
+                    <h3>${playerData.first_name} ${playerData.last_name}</h3>
+                    <ul>
+                        <li>Points Per Game (PPG): ${stats.pts || "N/A"}</li>
+                        <li>Assists Per Game (APG): ${stats.ast || "N/A"}</li>
+                        <li>Rebounds Per Game (RPG): ${stats.reb || "N/A"}</li>
+                        <li>Steals Per Game (SPG): ${stats.stl || "N/A"}</li>
+                        <li>Blocks Per Game (BPG): ${stats.blk || "N/A"}</li>
+                    </ul>
+                `;
+            } catch (error) {
+                container.innerHTML = `<p>Error loading stats. Please try again later.</p>`;
+            }
+        }
+
+        // Initial display for LeBron James
+        displayPlayerStats("lebron-stats", lebronId);
+
+        document.getElementById("compare-button").addEventListener("click", async function () {
+            const playerName = document.getElementById("player-search").value.trim();
+
+            if (!playerName) {
+                alert("Please enter a player name.");
+                return;
+            }
+
+            try {
+                // Search for the player by name
+                const searchResponse = await fetch(`${apiBaseUrl}players?search=${playerName}`);
+                const searchResults = await searchResponse.json();
+
+                if (searchResults.data.length === 0) {
+                    alert("Player not found. Please try another name.");
+                    return;
+                }
+
+                // Use the first search result for comparison
+                const selectedPlayer = searchResults.data[0];
+                displayPlayerStats("other-player-stats", selectedPlayer.id);
+            } catch (error) {
+                console.error("Error searching for player:", error);
+                alert("An error occurred. Please try again.");
+            }
+        });
+    });
+</script>
+
   
     <!-- end of sections-->
     
