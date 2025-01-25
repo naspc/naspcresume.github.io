@@ -334,9 +334,17 @@
 
 <script>
     function myFunction() {
-        let element = document.body;
-        element.classList.toggle("dark");
+    let element = document.body;
+    element.classList.toggle("dark");
+
+    // Toggle text color to white when dark mode is active
+    if (element.classList.contains("dark")) {
+        document.body.style.color = 'white';  // Change text color to white in dark mode
+    } else {
+        document.body.style.color = '';  // Revert to default text color
     }
+}
+
 </script>
 
 </body>

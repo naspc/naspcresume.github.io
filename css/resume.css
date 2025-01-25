@@ -131,7 +131,7 @@ a {
       background: #f9f9f9;
   }
 
-  button {
+  #darkModeButton {
     cursor: pointer;
     border: 1px solid #555;
     text-align: center;
@@ -146,7 +146,7 @@ a {
     font-size: 16px;  /* Optional: Adjust font size */
 }
 
-button:hover {
+#darkModeButton:hover {
     background-color: #ddd;  /* Optional: Change background color on hover */
 }
 
@@ -154,4 +154,8 @@ button:hover {
     background-color: #222;
     color: #e6e6e6;
 }
-  
+
+  /* For all text to be white when dark mode is active */
+body.dark {
+  color: white;
+}
