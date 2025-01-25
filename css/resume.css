@@ -40,7 +40,7 @@ h2 {
 .list-social-icons a {
   color: #495057; }
   .list-social-icons a:hover {
-    color: #BD5D38; }
+    color: #0b1786; }
   .list-social-icons a .fa-lg {
     font-size: 1.75rem; }
 
@@ -51,7 +51,11 @@ h2 {
 
 #sideNav .navbar-nav .nav-item .nav-link {
   font-weight: 600;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  font-size: 1.2rem; /* Larger text */
+  margin-bottom: 1rem; /* More space between items */
+}
+
 
 @media (min-width: 992px) {
   #sideNav {
@@ -104,13 +108,13 @@ section.resume-section {
     padding-bottom: 3rem !important; } }
 
 .bg-primary {
-  background-color: #BD5D38 !important; }
+  background-color: #2072c4 !important; }
 
 .text-primary {
-  color: #BD5D38 !important; }
+  color: #f6f6f6 !important; }
 
 a {
-  color: #BD5D38; }
+  color: #bd1f1f; }
   a:hover, a:focus, a:active {
     color: #824027; }
     #comparison-container {
