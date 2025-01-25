@@ -135,8 +135,19 @@ a {
     cursor: pointer;
     border: 1px solid #555;
     text-align: center;
-    padding: 5px;
+    padding: 10px 20px;  /* Increase padding for a larger button */
     margin-left: 8px;
+    position: fixed;  /* Position it relative to the viewport */
+    top: 20px;  /* Adjust the distance from the top */
+    right: 20px;  /* Adjust the distance from the right */
+    border-radius: 12px;  /* Round the corners */
+    background-color: #f0f0f0;  /* Optional: Add a background color */
+    color: #333;  /* Optional: Change text color */
+    font-size: 16px;  /* Optional: Adjust font size */
+}
+
+button:hover {
+    background-color: #ddd;  /* Optional: Change background color on hover */
 }
 
 .dark {
