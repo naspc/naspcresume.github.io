@@ -47,7 +47,7 @@ h2 {
 .list-icons {
   font-size: 3rem; }
   .list-icons .list-inline-item i:hover {
-    color: #BD5D38; }
+    color: #262ebf; }
 
 #sideNav .navbar-nav .nav-item .nav-link {
   font-weight: 600;
@@ -90,7 +90,7 @@ h2 {
             display: block; } }
 
 section.resume-section {
-  border-bottom: 1px solid #dee2e6;
+  border-bottom: 1px solid #ac4baa;
   padding-top: 5rem !important;
   padding-bottom: 5rem !important; }
   section.resume-section .resume-item .resume-date {
@@ -111,7 +111,7 @@ section.resume-section {
   background-color: #2072c4 !important; }
 
 .text-primary {
-  color: #f6f6f6 !important; }
+  color: #1518c7 !important; }
 
 a {
   color: #bd1f1f; }
