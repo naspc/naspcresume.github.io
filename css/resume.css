@@ -130,4 +130,17 @@ a {
       border-radius: 5px;
       background: #f9f9f9;
   }
+
+  button {
+    cursor: pointer;
+    border: 1px solid #555;
+    text-align: center;
+    padding: 5px;
+    margin-left: 8px;
+}
+
+.dark {
+    background-color: #222;
+    color: #e6e6e6;
+}
   
