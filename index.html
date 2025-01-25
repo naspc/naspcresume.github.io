@@ -112,6 +112,7 @@
               </a>
             </li>
           </ul>
+          <button id="darkModeButton" onclick="myFunction()">Switch mode</button>
         </div>
       </section>
 
@@ -320,17 +321,23 @@
     
     </div>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js" defer></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js" defer></script>
 
-    <!-- Custom scripts for this template -->
-    <script src="js/resume.min.js"></script>
-    <script src="js/contact.js"></script>
+<!-- Custom scripts for this template -->
+<script src="js/resume.min.js" defer></script>
+<script src="js/contact.js" defer></script>
 
-  </body>
+<script>
+    function myFunction() {
+        let element = document.body;
+        element.classList.toggle("dark");
+    }
+</script>
 
+</body>
 </html>
