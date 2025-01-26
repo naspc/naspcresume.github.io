@@ -16,24 +16,30 @@
      .catch(error => console.error('Error!', error.message))
  })
 
- /function myFunction() {
+ function myFunction() {
   const body = document.body;
-  body.classList.toggle("dark");
+  body.classList.toggle("warm-mode");
 
   // Save the user's preference in localStorage
-  const isDarkMode = body.classList.contains("dark");
-  localStorage.setItem("darkMode", isDarkMode);
+  const isWarmMode = body.classList.contains("warm-mode");
+  localStorage.setItem("warmMode", isWarmMode);
 }
 
-// Check for saved dark mode preference on page load
+// Check for saved preference on page load
 document.addEventListener("DOMContentLoaded", () => {
-  const isDarkMode = localStorage.getItem("darkMode") === "true";
-  if (isDarkMode) {
-    document.body.classList.add("dark");
-    document.getElementById("darkModeToggle").checked = true;
-  }
-});
+  const isWarmMode = localStorage.getItem("warmMode") === "true";
+  const body = document.body;
 
+  // Start in dark mode by default
+  if (!isWarmMode) {
+    body.classList.remove("warm-mode");
+  } else {
+    body.classList.add("warm-mode");
+  }
+
+  // Set the toggle state
+  document.getElementById("darkModeToggle").checked = isWarmMode;
+});
  // Slideshow functionality
  var myIndex = 0;
  carousel();

@@ -1,9 +1,9 @@
-/* Modernized CSS with new color scheme */
+/* Modernized CSS with Dark and Warm Tone Color Schemes */
 body {
   font-family: 'Open Sans', sans-serif;
   padding-top: 54px;
-  color: #333;
-  background-color: #F2EFE7;
+  color: #ECDFCC; /* Default text color for dark mode */
+  background-color: #3C3D37; /* Default background for dark mode */
 }
 
 @media (min-width: 992px) {
@@ -17,7 +17,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Saira Extra Condensed', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
-  color: #2973B2;
+  color: #ECDFCC; /* Default heading color for dark mode */
 }
 
 h1 {
@@ -34,15 +34,15 @@ h2 {
   font-weight: 500;
   font-family: 'Saira Extra Condensed', sans-serif;
   font-size: 1.35rem;
-  color: #48A6A7;
+  color: #697565; /* Subheading color for dark mode */
 }
 
 .list-social-icons a {
-  color: #48A6A7;
+  color: #697565; /* Icon color for dark mode */
 }
 
 .list-social-icons a:hover {
-  color: #2973B2;
+  color: #ECDFCC; /* Icon hover color for dark mode */
 }
 
 .list-icons {
@@ -50,7 +50,7 @@ h2 {
 }
 
 .list-icons .list-inline-item i:hover {
-  color: #2973B2;
+  color: #ECDFCC; /* Icon hover color for dark mode */
 }
 
 #sideNav .navbar-nav .nav-item .nav-link {
@@ -58,11 +58,11 @@ h2 {
   text-transform: uppercase;
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: #48A6A7;
+  color: #697565; /* Nav link color for dark mode */
 }
 
 #sideNav .navbar-nav .nav-item .nav-link:hover {
-  color: #2973B2;
+  color: #ECDFCC; /* Nav link hover color for dark mode */
 }
 
 @media (min-width: 992px) {
@@ -75,7 +75,7 @@ h2 {
     flex-direction: column;
     width: 17rem;
     height: 100vh;
-    background-color: #9ACBD0;
+    background-color: rgb(24, 28, 20); /* Sidebar background for dark mode */
   }
 
   #sideNav .navbar-brand .img-profile {
@@ -86,7 +86,7 @@ h2 {
 }
 
 section.resume-section {
-  border-bottom: 1px solid #48A6A7;
+  border-bottom: 1px solid #697565; /* Border color for dark mode */
   padding-top: 5rem !important;
   padding-bottom: 5rem !important;
 }
@@ -121,11 +121,11 @@ section.resume-section .resume-item .resume-date {
 }
 
 a {
-  color: #48A6A7;
+  color: #697565; /* Link color for dark mode */
 }
 
 a:hover, a:focus, a:active {
-  color: #2973B2;
+  color: #ECDFCC; /* Link hover color for dark mode */
 }
 
 /* Dark Mode Toggle Switch Styles */
@@ -176,45 +176,55 @@ a:hover, a:focus, a:active {
   fill: rgb(255, 255, 255);
 }
 
-/* Dark Mode Styles */
-.dark {
-  background-color: #222;
-  color: #e6e6e6;
+/* Warm Mode Styles */
+body.warm-mode {
+  background-color: #F5EFE7; /* Warm background */
+  color: #213555; /* Warm text color */
 }
 
-.dark h1,
-.dark h2,
-.dark h3,
-.dark h4,
-.dark h5,
-.dark h6 {
-  color: #fff;
+body.warm-mode h1,
+body.warm-mode h2,
+body.warm-mode h3,
+body.warm-mode h4,
+body.warm-mode h5,
+body.warm-mode h6 {
+  color: #213555; /* Warm heading color */
 }
 
-.dark .resume-item {
-  background-color: #333;
-  color: #e6e6e6;
+body.warm-mode .subheading {
+  color: #3E5879; /* Warm subheading color */
 }
 
-.dark .subheading {
-  color: #9ACBD0;
+body.warm-mode .resume-item {
+  background-color: #D8C4B6; /* Warm resume item background */
+  color: #213555; /* Warm resume item text color */
 }
 
-.dark #sideNav {
-  background-color: #444;
+body.warm-mode .list-social-icons a {
+  color: #3E5879; /* Warm icon color */
 }
 
-.dark .list-social-icons a {
-  color: #9ACBD0;
+body.warm-mode .list-social-icons a:hover {
+  color: #213555; /* Warm icon hover color */
 }
 
-.dark .list-social-icons a:hover {
-  color: #2973B2;
+body.warm-mode #sideNav {
+  background-color: #D8C4B6; /* Warm sidebar background */
+}
+
+body.warm-mode a {
+  color: #3E5879; /* Warm link color */
+}
+
+body.warm-mode a:hover,
+body.warm-mode a:focus,
+body.warm-mode a:active {
+  color: #213555; /* Warm link hover color */
 }
 
 /* Additional modern styles */
 .resume-item {
-  background-color: #fff;
+  background-color: rgb(24, 28, 20); /* Default resume item background for dark mode */
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -227,11 +237,11 @@ a:hover, a:focus, a:active {
 }
 
 #skills .list-inline-item i {
-  color: #48A6A7;
+  color: #697565; /* Skill icon color for dark mode */
 }
 
 #skills .list-inline-item i:hover {
-  color: #2973B2;
+  color: #ECDFCC; /* Skill icon hover color for dark mode */
 }
 
 #interests .mySlides {
