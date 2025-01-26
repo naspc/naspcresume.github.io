@@ -57,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
  }
 
  // Changing text logic 
-
  const words = ["Developer", "Programmer", "Student", "Athlete", "Gamer", "Leader"];
  let i = 0;
  let j = 0;
@@ -65,31 +64,31 @@ document.addEventListener("DOMContentLoaded", () => {
  const speed = 100; // Typing speed in milliseconds
  const deleteSpeed = 50; // Deleting speed in milliseconds
  const pause = 1000; // Pause between words in milliseconds
-
+ 
  function type() {
-     const currentWord = words[i];
-     const displayText = document.querySelector('.automatic');
-
-     if (!isDeleting) {
-         displayText.textContent = currentWord.substring(0, j + 1);
-         j++;
-         if (j === currentWord.length) {
-             isDeleting = true;
-             setTimeout(type, pause);
-         } else {
-             setTimeout(type, speed);
-         }
+   const currentWord = words[i];
+   const displayText = document.querySelector('.automatic');
+ 
+   if (!isDeleting) {
+     displayText.textContent = currentWord.substring(0, j + 1);
+     j++;
+     if (j === currentWord.length) {
+       isDeleting = true;
+       setTimeout(type, pause);
      } else {
-         displayText.textContent = currentWord.substring(0, j - 1);
-         j--;
-         if (j === 0) {
-             isDeleting = false;
-             i = (i + 1) % words.length;
-             setTimeout(type, speed);
-         } else {
-             setTimeout(type, deleteSpeed);
-         }
+       setTimeout(type, speed);
      }
+   } else {
+     displayText.textContent = currentWord.substring(0, j - 1);
+     j--;
+     if (j === 0) {
+       isDeleting = false;
+       i = (i + 1) % words.length;
+       setTimeout(type, speed);
+     } else {
+       setTimeout(type, deleteSpeed);
+     }
+   }
  }
-
+ 
  document.addEventListener('DOMContentLoaded', type);
