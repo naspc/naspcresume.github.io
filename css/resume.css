@@ -1,14 +1,9 @@
-/*!
- * Start Bootstrap - Resume v4.0.0-beta.2 (https://startbootstrap.com/template-overviews/resume)
- * Copyright 2013-2017 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-resume/blob/master/LICENSE)
- */
 /* Modernized CSS with new color scheme */
 body {
   font-family: 'Open Sans', sans-serif;
   padding-top: 54px;
   color: #333;
-  background-color: #F2EFE7; /* Light background */
+  background-color: #F2EFE7;
 }
 
 @media (min-width: 992px) {
@@ -22,7 +17,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Saira Extra Condensed', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
-  color: #2973B2; /* Primary color for headings */
+  color: #2973B2;
 }
 
 h1 {
@@ -39,15 +34,15 @@ h2 {
   font-weight: 500;
   font-family: 'Saira Extra Condensed', sans-serif;
   font-size: 1.35rem;
-  color: #48A6A7; /* Secondary color for subheadings */
+  color: #48A6A7;
 }
 
 .list-social-icons a {
-  color: #48A6A7; /* Secondary color for icons */
+  color: #48A6A7;
 }
 
 .list-social-icons a:hover {
-  color: #2973B2; /* Primary color for hover */
+  color: #2973B2;
 }
 
 .list-icons {
@@ -55,7 +50,7 @@ h2 {
 }
 
 .list-icons .list-inline-item i:hover {
-  color: #2973B2; /* Primary color for hover */
+  color: #2973B2;
 }
 
 #sideNav .navbar-nav .nav-item .nav-link {
@@ -63,11 +58,11 @@ h2 {
   text-transform: uppercase;
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: #48A6A7; /* Secondary color for nav links */
+  color: #48A6A7;
 }
 
 #sideNav .navbar-nav .nav-item .nav-link:hover {
-  color: #2973B2; /* Primary color for hover */
+  color: #2973B2;
 }
 
 @media (min-width: 992px) {
@@ -80,7 +75,7 @@ h2 {
     flex-direction: column;
     width: 17rem;
     height: 100vh;
-    background-color: #9ACBD0; /* Light blue for sidebar */
+    background-color: #9ACBD0;
   }
 
   #sideNav .navbar-brand .img-profile {
@@ -91,7 +86,7 @@ h2 {
 }
 
 section.resume-section {
-  border-bottom: 1px solid #48A6A7; /* Secondary color for borders */
+  border-bottom: 1px solid #48A6A7;
   padding-top: 5rem !important;
   padding-bottom: 5rem !important;
 }
@@ -118,67 +113,103 @@ section.resume-section .resume-item .resume-date {
 }
 
 .bg-primary {
-  background-color: #2973B2 !important; /* Primary color for backgrounds */
+  background-color: #2973B2 !important;
 }
 
 .text-primary {
-  color: #2973B2 !important; /* Primary color for text */
+  color: #2973B2 !important;
 }
 
 a {
-  color: #48A6A7; /* Secondary color for links */
+  color: #48A6A7;
 }
 
 a:hover, a:focus, a:active {
-  color: #2973B2; /* Primary color for hover */
+  color: #2973B2;
 }
 
-#darkModeButton {
+/* Dark Mode Toggle Switch Styles */
+#darkModeToggle {
+  display: none;
+}
+
+.switch {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  background-color: rgb(99, 99, 99);
+  border-radius: 50%;
+  z-index: 1;
   cursor: pointer;
-  border: 1px solid #555;
-  text-align: center;
-  padding: 10px 20px;
-  margin-left: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgb(126, 126, 126);
+  box-shadow: 0px 0px 3px rgb(2, 2, 2) inset;
   position: fixed;
   top: 20px;
   right: 20px;
-  border-radius: 12px;
-  background-color: #9ACBD0; /* Light blue for button */
-  color: #333;
-  font-size: 16px;
 }
 
-#darkModeButton:hover {
-  background-color: #48A6A7; /* Secondary color for hover */
+.switch svg {
+  width: 1.2em;
 }
 
+.switch svg path {
+  fill: rgb(48, 48, 48);
+}
+
+#darkModeToggle:checked + .switch {
+  box-shadow: 0px 0px 1px rgb(151, 243, 255) inset,
+    0px 0px 2px rgb(151, 243, 255) inset, 0px 0px 10px rgb(151, 243, 255) inset,
+    0px 0px 40px rgb(151, 243, 255), 0px 0px 100px rgb(151, 243, 255),
+    0px 0px 5px rgb(151, 243, 255);
+  border: 2px solid rgb(255, 255, 255);
+  background-color: rgb(146, 180, 184);
+}
+
+#darkModeToggle:checked + .switch svg {
+  filter: drop-shadow(0px 0px 5px rgb(151, 243, 255));
+}
+
+#darkModeToggle:checked + .switch svg path {
+  fill: rgb(255, 255, 255);
+}
+
+/* Dark Mode Styles */
 .dark {
   background-color: #222;
   color: #e6e6e6;
 }
 
-body.dark {
-  color: white;
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  color: #fff;
 }
 
-.automatic {
-  font-size: 2em;
-  font-weight: bold;
-  color: #2973B2; /* Primary color for automatic text */
+.dark .resume-item {
+  background-color: #333;
+  color: #e6e6e6;
 }
 
-.cursor {
-  display: inline-block;
-  width: 2px;
-  height: 1em;
-  background-color: #2973B2; /* Primary color for cursor */
-  animation: blink 1s infinite;
+.dark .subheading {
+  color: #9ACBD0;
 }
 
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
+.dark #sideNav {
+  background-color: #444;
+}
+
+.dark .list-social-icons a {
+  color: #9ACBD0;
+}
+
+.dark .list-social-icons a:hover {
+  color: #2973B2;
 }
 
 /* Additional modern styles */
@@ -196,11 +227,11 @@ body.dark {
 }
 
 #skills .list-inline-item i {
-  color: #48A6A7; /* Secondary color for skill icons */
+  color: #48A6A7;
 }
 
 #skills .list-inline-item i:hover {
-  color: #2973B2; /* Primary color for hover */
+  color: #2973B2;
 }
 
 #interests .mySlides {
@@ -209,12 +240,12 @@ body.dark {
 }
 
 #resume .btn-primary {
-  background-color: #2973B2; /* Primary color for buttons */
+  background-color: #2973B2;
   border: none;
 }
 
 #resume .btn-primary:hover {
-  background-color: #48A6A7; /* Secondary color for hover */
+  background-color: #48A6A7;
 }
 
 /* Glitch Button Styles */
@@ -231,7 +262,7 @@ body.dark {
   cursor: pointer;
   border-radius: 15px;
   background-color: transparent;
-  text-decoration: none; /* Remove underline */
+  text-decoration: none;
 }
 
 [class*="btn-glitch-"] .text,
@@ -310,9 +341,9 @@ body.dark {
 .navbar-nav {
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Add spacing between buttons */
+  gap: 10px;
 }
 
 .nav-item {
-  list-style: none; /* Remove bullet points */
+  list-style: none;
 }

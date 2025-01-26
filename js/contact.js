@@ -16,18 +16,23 @@
      .catch(error => console.error('Error!', error.message))
  })
 
- // Dark mode toggle function
- function myFunction() {
-   let element = document.body;
-   element.classList.toggle("dark");
+ /function myFunction() {
+  const body = document.body;
+  body.classList.toggle("dark");
 
-   // Toggle text color to white when dark mode is active
-   if (element.classList.contains("dark")) {
-     document.body.style.color = 'white';  // Change text color to white in dark mode
-   } else {
-     document.body.style.color = '';  // Revert to default text color
-   }
- }
+  // Save the user's preference in localStorage
+  const isDarkMode = body.classList.contains("dark");
+  localStorage.setItem("darkMode", isDarkMode);
+}
+
+// Check for saved dark mode preference on page load
+document.addEventListener("DOMContentLoaded", () => {
+  const isDarkMode = localStorage.getItem("darkMode") === "true";
+  if (isDarkMode) {
+    document.body.classList.add("dark");
+    document.getElementById("darkModeToggle").checked = true;
+  }
+});
 
  // Slideshow functionality
  var myIndex = 0;
