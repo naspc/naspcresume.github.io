@@ -4,6 +4,18 @@ body {
   padding-top: 54px;
   color: #ECDFCC; /* Default text color for dark mode */
   background-color: #3C3D37; /* Default background for dark mode */
+  cursor:none;
+}
+/* Custom Cursor */
+.custom-cursor {
+  position: fixed;
+  width: 32px; /* Adjust based on your image size */
+  height: 32px; /* Adjust based on your image size */
+  background: url('img/mouse.png') no-repeat center center; /* Replace with your image path */
+  background-size: contain;
+  pointer-events: none; /* Ensure the cursor doesn't interfere with clicks */
+  transform: translate(-50%, -50%); /* Center the cursor on the mouse position */
+  z-index: 9999; /* Ensure it's above other elements */
 }
 
 @media (min-width: 992px) {

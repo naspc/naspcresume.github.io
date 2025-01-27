@@ -92,3 +92,18 @@ document.addEventListener("DOMContentLoaded", () => {
  }
  
  document.addEventListener('DOMContentLoaded', type);
+
+ //cursor logic
+ // Create the custom cursor element
+const cursor = document.createElement('div');
+cursor.classList.add('custom-cursor');
+document.body.appendChild(cursor);
+
+// Update cursor position on mouse move
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = `${e.clientX}px`;
+    cursor.style.top = `${e.clientY}px`;
+});
+
+// Hide the default cursor
+document.body.style.cursor = 'none';
