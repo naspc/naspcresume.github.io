@@ -15,9 +15,11 @@ body {
   background-size: contain;
   pointer-events: none;
   transform: translate(-50%, -50%); /* Center the cursor */
-  z-index: 9999;
+  z-index: 2147483647 !important; /* Maximum possible z-index */
+  filter: drop-shadow(0 0 5px rgba(255,255,255,0.5)); /* White glow */
+  border: 2px solid #ECDFCC; /* Match your text color */
   /* Add your existing glitch animation here */
-  animation: glitch 0.5s infinite; /* Example glitch effect */
+  /*animation: glitch 0.5s infinite; /* Example glitch effect */
 }
 
 @media (min-width: 992px) {
