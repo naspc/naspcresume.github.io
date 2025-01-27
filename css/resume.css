@@ -4,7 +4,6 @@ body {
   padding-top: 54px;
   color: #ECDFCC; /* Default text color for dark mode */
   background-color: #3C3D37; /* Default background for dark mode */
-  cursor:none;
 }
 
 html {
@@ -374,11 +373,4 @@ body.warm-mode a:active {
   /* text-align: left; */
 }
 
-.cursor {
-  display: inline-block;
-  width: 2px;
-  height: 1em;
-  background-color: #2973B2; /* Primary color for cursor */
-  animation: blink 1s infinite;
-}
 
