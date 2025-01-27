@@ -7,19 +7,8 @@ body {
   cursor:none;
 }
 
-.custom-cursor {
-  position: fixed;
-  width: 32px; /* Match your image dimensions */
-  height: 32px;
-  background: url('img/mouse.png') no-repeat center center;
-  background-size: contain;
-  pointer-events: none;
-  transform: translate(-50%, -50%); /* Center the cursor */
-  z-index: 2147483647 !important; /* Maximum possible z-index */
-  filter: drop-shadow(0 0 5px rgba(255,255,255,0.5)); /* White glow */
-  border: 2px solid #ECDFCC; /* Match your text color */
-  /* Add your existing glitch animation here */
-  /*animation: glitch 0.5s infinite; /* Example glitch effect */
+html {
+  cursor: url(/img/mouse.png) auto;
 }
 
 @media (min-width: 992px) {

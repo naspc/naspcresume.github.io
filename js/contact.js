@@ -94,16 +94,3 @@ document.addEventListener("DOMContentLoaded", () => {
  document.addEventListener('DOMContentLoaded', type);
 
  //cursor logic
-// Wait for DOM to load first
-document.addEventListener('DOMContentLoaded', () => {
-  // Create cursor element
-  const cursor = document.createElement('div');
-  cursor.classList.add('custom-cursor');
-  document.body.appendChild(cursor);
-
-  // Update cursor position
-  document.addEventListener('mousemove', (e) => {
-    cursor.style.left = `${e.clientX}px`;
-    cursor.style.top = `${e.clientY}px`;
-  });
-});
