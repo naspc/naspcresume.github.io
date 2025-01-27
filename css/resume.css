@@ -2,26 +2,7 @@
 body {
   font-family: 'Open Sans', sans-serif;
   padding-top: 54px;
-  color: #ECDFCC; /* Default text color for dark mode */
-  background-color: rgb(24, 28, 20) !important; /* Match sidebar color */}
-
-  #sideNav {
-    background-color: rgb(24, 28, 20); /* Dark mode sidebar */
-    transition: background-color 0.3s ease;
-  }
-  
-  @media (min-width: 992px) {
-    #sideNav {
-      width: 17rem;
-      background-color: inherit; /* Inherit from body color */
-    }
-  }
-
-@media (min-width: 992px) {
-  body {
-    padding-top: 0;
-    padding-left: 17rem;
-  }
+  background-color: #1A1A1A !important; /* Single dark color for entire site */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -70,9 +51,6 @@ h2 {
   font-size: 1.2rem;
   margin-bottom: 1rem;
   color: #697565; /* Nav link color for dark mode */
-  background-color: rgb(24, 28, 20); /* Same as body */
-  border-right: 1px solid #697565; /* Add subtle border for separation */
-  z-index: 1000; /* Ensure navbar stays on top */
 }
 
 #sideNav .navbar-nav .nav-item .nav-link:hover {
@@ -103,12 +81,6 @@ section.resume-section {
   border-bottom: 1px solid #697565; /* Border color for dark mode */
   padding-top: 5rem !important;
   padding-bottom: 5rem !important;
-  background-color: rgb(24, 28, 20); /* Match body color */
-}
-
-.resume-item {
-  background-color: rgba(255, 255, 255, 0.05) !important; /* Subtle contrast */
-  border: 1px solid rgba(105, 117, 101, 0.3); /* Match subheading color */
 }
 
 section.resume-section .resume-item .resume-date {
@@ -388,43 +360,4 @@ body.warm-mode a:active {
   /* width: 150px; */
   /* text-align: left; */
 }
-
-
-/* Warm Mode Styles */
-body.warm-mode {
-  background-color: #F5EFE7 !important;
-  color: #213555;
-}
-
-body.warm-mode #sideNav {
-  background-color: #F5EFE7; /* Match warm background */
-}
-
-/* Navbar Link Colors */
-#sideNav .navbar-nav .nav-item .nav-link {
-  color: #697565; /* Dark mode link color */
-  transition: color 0.3s ease;
-}
-
-body.warm-mode #sideNav .navbar-nav .nav-item .nav-link {
-  color: #3E5879; /* Warm mode link color */
-}
-
-#sideNav .navbar-nav .nav-item .nav-link:hover {
-  color: #ECDFCC; /* Dark mode hover */
-}
-
-body.warm-mode #sideNav .navbar-nav .nav-item .nav-link:hover {
-  color: #213555; /* Warm mode hover */
-}
-
-/* Border Adjustment */
-#sideNav .navbar-nav .nav-item .nav-link {
-  border-right: 1px solid #697565; /* Dark mode border */
-}
-
-body.warm-mode #sideNav .navbar-nav .nav-item .nav-link {
-  border-right: 1px solid #3E5879; /* Warm mode border */
-}
-
 
