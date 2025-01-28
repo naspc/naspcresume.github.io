@@ -137,9 +137,6 @@ section.resume-section .resume-item .resume-date {
   background-color: #b22929 !important;
 }
 
-.text-primary {
-  color: #95e6ff !important;
-}
 
 a {
   color: #ffffff; /* Link color for dark mode */
@@ -403,4 +400,6 @@ h1.mb-0 {
 .text-primary, .automatic {
   font-size: inherit; /* Ensure both spans inherit the same font size */
   display: inline-block; /* Keep them inline */
+  font-family: 'Courier New', monospace; /* Monospace font */
+  color: white;
 }
