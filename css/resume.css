@@ -45,17 +45,17 @@ h2 {
   color: #ECDFCC; /* Icon hover color for dark mode */
 }
 
+/* Transparent Navigation */
 #sideNav {
   background-color: transparent !important;
   border-right: none !important;
   transition: background-color 0.3s ease;
+  
 }
 
-/* Nav Link Colors */
-#sideNav .navbar-nav .nav-item .nav-link,
-.nav-item {
-  color: white !important; /* Default white color */
-  transition: color 0.3s ease;
+/* Nav Link Spacing and Borders */
+#sideNav .navbar-nav .nav-item {
+  margin: 8px 0;
 }
 
 #sideNav .navbar-nav .nav-item .nav-link {
@@ -63,16 +63,18 @@ h2 {
   text-transform: uppercase;
   font-size: 1.2rem;
   margin-bottom: 1rem;
+  color: #ffffff; /* Dark mode link color */
+  transition: color 0.3s ease;
   border: 2px solid #ECDFCC;
   border-radius: 8px;
+  border-color: white;
   padding: 8px 15px;
   margin: 5px 0;
 }
 
 #sideNav .navbar-nav .nav-item .nav-link:hover {
-  color: #ff9900 !important;
+  color: #ff9900; /* Dark mode hover color */
 }
-
 
 @media (min-width: 992px) {
   #sideNav {
