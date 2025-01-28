@@ -396,12 +396,18 @@ body.warm-mode .img-profile {
   white-space: nowrap; /* Prevent text from wrapping to the next line */
   overflow: hidden; /* Hide overflow text */
   display: inline-block; /* Keep the content in one line */
+  margin-left: 0.5rem; /* Add some spacing between the name and "Developer" */
 }
 
 
 h1.mb-0 {
-  white-space: nowrap; /* Prevent text from wrapping to the next line */
-  overflow: hidden; /* Hide overflow text */
-  display: inline-block; /* Keep the content in one line */
+  font-size: 4rem; /* Adjust this value to match your desired size */
+  white-space: nowrap; /* Keep everything on one line */
+  display: flex; /* Use flexbox for alignment */
+  align-items: baseline; /* Align text to the baseline */
 }
 
+.text-primary, .automatic {
+  font-size: inherit; /* Ensure both spans inherit the same font size */
+  display: inline-block; /* Keep them inline */
+}
