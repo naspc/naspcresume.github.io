@@ -403,3 +403,7 @@ h1.mb-0 {
   font-family: 'Courier New', monospace; /* Monospace font */
   color: white;
 }
+
+.text-primary{
+  color: white;
+}
