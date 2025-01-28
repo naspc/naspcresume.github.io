@@ -74,10 +74,10 @@ h2 {
   transition: all 0.3s ease;
 }
 
-/* Hover States */
+/* Hover State for light mode */
 #sideNav .navbar-nav .nav-item .nav-link:hover {
-  color: #ff9900 !important;
-  border-color: #ff9900;
+  color: #ff9627 !important;
+  border-color: #ffffff00;
 }
 
 @media (min-width: 992px) {
@@ -391,7 +391,7 @@ body.warm-mode .img-profile {
 .automatic {
   font-size: 2em;
   font-weight: bold;
-  color: #2973B2; /* Primary color for automatic text */
+  color: #000000; /* Primary color for automatic text */
   font-family: 'Courier New', monospace; /* Monospace font */
   /* OR */
   /* display: inline-block; */
