@@ -56,16 +56,13 @@ h2 {
 #sideNav .navbar-nav .nav-item {
   margin: 8px 0;
 }
-.nav-item {
-  color:white;
-}
 
 #sideNav .navbar-nav .nav-item .nav-link {
   font-weight: 600;
   text-transform: uppercase;
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: #697565; /* Dark mode link color */
+  color: #ffffff; /* Dark mode link color */
   transition: color 0.3s ease;
   border: 2px solid #ECDFCC;
   border-radius: 8px;
@@ -132,15 +129,15 @@ section.resume-section .resume-item .resume-date {
 }
 
 .text-primary {
-  color: #2973B2 !important;
+  color: #95e6ff !important;
 }
 
 a {
-  color: #697565; /* Link color for dark mode */
+  color: #ffffff; /* Link color for dark mode */
 }
 
 a:hover, a:focus, a:active {
-  color: #ECDFCC; /* Link hover color for dark mode */
+  color: #23ebc3; /* Link hover color for dark mode */
 }
 
 /* Dark Mode Toggle Switch Styles */
@@ -323,7 +320,7 @@ body.warm-mode .img-profile {
 
 [class*="btn-glitch-"]:active {
   background: none;
-  color: yellow;
+  color: rgb(205, 18, 18);
 }
 
 [class*="btn-glitch-"]:active .text-decoration,
