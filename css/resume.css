@@ -2,7 +2,7 @@
 body {
   font-family: 'Open Sans', sans-serif;
   padding-top: 54px;
-  background-color: #1A1A1A !important; /* Single dark color for entire site */
+  background-color: #072f78 !important; /* Single dark color for entire site */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -76,7 +76,7 @@ h2 {
 
 /* Hover State for light mode */
 #sideNav .navbar-nav .nav-item .nav-link:hover {
-  color: #ff9627 !important;
+  color: #ee00ff !important;
   border-color: #ffffff00;
 }
 
@@ -391,11 +391,17 @@ body.warm-mode .img-profile {
 .automatic {
   font-size: 2em;
   font-weight: bold;
-  color: #000000; /* Primary color for automatic text */
+  color: #ffffff; /* Primary color for automatic text */
   font-family: 'Courier New', monospace; /* Monospace font */
-  /* OR */
-  /* display: inline-block; */
-  /* width: 150px; */
-  /* text-align: left; */
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+  overflow: hidden; /* Hide overflow text */
+  display: inline-block; /* Keep the content in one line */
+}
+
+
+h1.mb-0 {
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+  overflow: hidden; /* Hide overflow text */
+  display: inline-block; /* Keep the content in one line */
 }
 
