@@ -389,7 +389,7 @@ body.warm-mode .img-profile {
 
 
 .automatic {
-  font-size: 2em;
+  font-size: 20px;
   font-weight: bold;
   color: #ffffff; /* Primary color for automatic text */
   font-family: 'Courier New', monospace; /* Monospace font */
