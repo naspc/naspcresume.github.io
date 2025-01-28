@@ -15,27 +15,47 @@
      })
      .catch(error => console.error('Error!', error.message))
  })
-
- // Update JavaScript
+ 
+// Toggle Mode Function
 function myFunction() {
   const body = document.body;
   body.classList.toggle("warm-mode");
   
-  // Update profile border color
+  // Update elements that need direct style changes
   const profileImg = document.querySelector('.img-profile');
-  profileImg.style.borderColor = body.classList.contains("warm-mode") ? '#213555' : '#fff';
+  const navLinks = document.querySelectorAll('#sideNav .nav-link');
+  
+  // Toggle profile border color
+  const borderColor = body.classList.contains("warm-mode") ? '#213555' : '#fff';
+  profileImg.style.borderColor = borderColor;
 
+  // Force nav link color refresh
+  navLinks.forEach(link => {
+    link.style.color = ''; // Reset inline styles to let CSS handle it
+  });
+
+  // Save state
   localStorage.setItem("warmMode", body.classList.contains("warm-mode"));
 }
 
+// Initialize on load
 document.addEventListener("DOMContentLoaded", () => {
   const isWarmMode = localStorage.getItem("warmMode") === "true";
-  document.body.classList.toggle("warm-mode", isWarmMode);
-  document.getElementById("darkModeToggle").checked = isWarmMode;
+  const body = document.body;
+  const navLinks = document.querySelectorAll('#sideNav .nav-link');
   
-  // Initialize profile border color
+  // Set initial mode
+  body.classList.toggle("warm-mode", isWarmMode);
+  document.getElementById("darkModeToggle").checked = isWarmMode;
+
+  // Initialize profile border
   const profileImg = document.querySelector('.img-profile');
   profileImg.style.borderColor = isWarmMode ? '#213555' : '#fff';
+
+  // Initialize nav colors
+  navLinks.forEach(link => {
+    link.style.color = ''; // Ensure CSS controls the color
+  });
 });
 
  // Slideshow functionality

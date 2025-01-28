@@ -102,6 +102,12 @@ h2 {
   }
 }
 
+/* Default/Dark Mode */
+#sideNav .nav-item .nav-link {
+  color: white !important;
+  transition: color 0.3s ease;
+}
+
 
 section.resume-section {
   background-color: transparent !important;
@@ -221,6 +227,11 @@ body.warm-mode #sideNav .navbar-brand .img-profile {
 /* Keep sidebar transparent in both modes */
 body.warm-mode #sideNav {
   background-color: transparent !important; /* Override previous background */
+}
+
+/* Warm Mode */
+.warm-mode #sideNav .nav-item .nav-link {
+  color: #333 !important; /* Dark color for warm mode */
 }
 
 .img-profile {
