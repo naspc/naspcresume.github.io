@@ -3,6 +3,8 @@ body {
   font-family: 'Open Sans', sans-serif;
   padding-top: 54px;
   background-color: #072f78 !important; /* Single dark color for entire site */
+  color: white;
+  
 }
 
 h1, h2, h3, h4, h5, h6 {
