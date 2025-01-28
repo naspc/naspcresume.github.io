@@ -15,7 +15,7 @@
      })
      .catch(error => console.error('Error!', error.message))
  })
- 
+
 // Toggle Mode Function
 function myFunction() {
   const body = document.body;
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
  // Slideshow functionality
- var myIndex = 0;
+ /*var myIndex = 0;
  carousel();
 
  function carousel() {
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
    if (myIndex > x.length) {myIndex = 1}    
    x[myIndex-1].style.display = "block";  
    setTimeout(carousel, 2000); // Change image every 2 seconds
- }
+ } */
 
  // Changing text logic 
  const words = ["Developer", "Programmer", "Student", "Athlete", "Gamer", "Leader"];
