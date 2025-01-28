@@ -58,6 +58,11 @@ h2 {
   margin: 8px 0;
 }
 
+.nav-item {
+  border-color: white;
+  color: white;
+}
+
 #sideNav .navbar-nav .nav-item .nav-link {
   font-weight: 600;
   text-transform: uppercase;
