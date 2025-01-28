@@ -45,16 +45,24 @@ h2 {
   color: #ECDFCC; /* Icon hover color for dark mode */
 }
 
+/* Transparent Navigation */
+#sideNav {
+  background-color: transparent !important;
+  border-right: none !important;
+  transition: background-color 0.3s ease;
+}
+
 #sideNav .navbar-nav .nav-item .nav-link {
   font-weight: 600;
   text-transform: uppercase;
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: #697565; /* Nav link color for dark mode */
+  color: #697565; /* Dark mode link color */
+  transition: color 0.3s ease;
 }
 
 #sideNav .navbar-nav .nav-item .nav-link:hover {
-  color: #ECDFCC; /* Nav link hover color for dark mode */
+  color: #ECDFCC; /* Dark mode hover color */
 }
 
 @media (min-width: 992px) {
@@ -67,18 +75,21 @@ h2 {
     flex-direction: column;
     width: 17rem;
     height: 100vh;
-    background-color: rgb(24, 28, 20); /* Sidebar background for dark mode */
+    background-color: transparent !important; /* Keep transparent */
   }
 
   #sideNav .navbar-brand .img-profile {
     max-width: 10rem;
     max-height: 10rem;
     border: 0.5rem solid rgba(255, 255, 255, 0.2);
+    transition: border-color 0.3s ease;
   }
 }
 
+
 section.resume-section {
-  border-bottom: 1px solid #697565; /* Border color for dark mode */
+  background-color: transparent !important;
+  border-bottom: 1px solid #3A3A3A; /* Subtle divider */
   padding-top: 5rem !important;
   padding-bottom: 5rem !important;
 }
@@ -105,7 +116,7 @@ section.resume-section .resume-item .resume-date {
 }
 
 .bg-primary {
-  background-color: #2973B2 !important;
+  background-color: #b22929 !important;
 }
 
 .text-primary {
@@ -168,55 +179,27 @@ a:hover, a:focus, a:active {
   fill: rgb(255, 255, 255);
 }
 
-/* Warm Mode Styles */
-body.warm-mode {
-  background-color: #F5EFE7; /* Warm background */
-  color: #213555; /* Warm text color */
+/* Warm Mode Overrides (Light Mode) */
+body.warm-mode #sideNav .navbar-nav .nav-item .nav-link {
+  color: #3E5879; /* Light mode link color */
 }
 
-body.warm-mode h1,
-body.warm-mode h2,
-body.warm-mode h3,
-body.warm-mode h4,
-body.warm-mode h5,
-body.warm-mode h6 {
-  color: #213555; /* Warm heading color */
+body.warm-mode #sideNav .navbar-nav .nav-item .nav-link:hover {
+  color: #213555; /* Light mode hover color */
 }
 
-body.warm-mode .subheading {
-  color: #3E5879; /* Warm subheading color */
+body.warm-mode #sideNav .navbar-brand .img-profile {
+  border-color: rgba(0, 0, 0, 0.2); /* Darker border for light mode */
 }
 
-body.warm-mode .resume-item {
-  background-color: #D8C4B6; /* Warm resume item background */
-  color: #213555; /* Warm resume item text color */
-}
-
-body.warm-mode .list-social-icons a {
-  color: #3E5879; /* Warm icon color */
-}
-
-body.warm-mode .list-social-icons a:hover {
-  color: #213555; /* Warm icon hover color */
-}
-
+/* Keep sidebar transparent in both modes */
 body.warm-mode #sideNav {
-  background-color: #D8C4B6; /* Warm sidebar background */
+  background-color: transparent !important; /* Override previous background */
 }
-
-body.warm-mode a {
-  color: #3E5879; /* Warm link color */
-}
-
-body.warm-mode a:hover,
-body.warm-mode a:focus,
-body.warm-mode a:active {
-  color: #213555; /* Warm link hover color */
-}
-
 /* Additional modern styles */
 .resume-item {
-  background-color: rgb(24, 28, 20); /* Default resume item background for dark mode */
+  background-color: rgba(255, 255, 255, 0.05) !important; /* Slight contrast */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -339,16 +322,6 @@ body.warm-mode a:active {
   }
 }
 
-/* Ensure the navbar items are styled correctly */
-.navbar-nav {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.nav-item {
-  list-style: none;
-}
 
 .automatic {
   font-size: 2em;
