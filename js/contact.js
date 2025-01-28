@@ -16,30 +16,28 @@
      .catch(error => console.error('Error!', error.message))
  })
 
- function myFunction() {
+ // Update JavaScript
+function myFunction() {
   const body = document.body;
   body.classList.toggle("warm-mode");
+  
+  // Update profile border color
+  const profileImg = document.querySelector('.img-profile');
+  profileImg.style.borderColor = body.classList.contains("warm-mode") ? '#213555' : '#fff';
 
-  // Save the user's preference in localStorage
-  const isWarmMode = body.classList.contains("warm-mode");
-  localStorage.setItem("warmMode", isWarmMode);
+  localStorage.setItem("warmMode", body.classList.contains("warm-mode"));
 }
 
-// Check for saved preference on page load
 document.addEventListener("DOMContentLoaded", () => {
   const isWarmMode = localStorage.getItem("warmMode") === "true";
-  const body = document.body;
-
-  // Start in dark mode by default
-  if (!isWarmMode) {
-    body.classList.remove("warm-mode");
-  } else {
-    body.classList.add("warm-mode");
-  }
-
-  // Set the toggle state
+  document.body.classList.toggle("warm-mode", isWarmMode);
   document.getElementById("darkModeToggle").checked = isWarmMode;
+  
+  // Initialize profile border color
+  const profileImg = document.querySelector('.img-profile');
+  profileImg.style.borderColor = isWarmMode ? '#213555' : '#fff';
 });
+
  // Slideshow functionality
  var myIndex = 0;
  carousel();

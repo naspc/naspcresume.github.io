@@ -52,6 +52,11 @@ h2 {
   transition: background-color 0.3s ease;
 }
 
+/* Nav Link Spacing and Borders */
+#sideNav .navbar-nav .nav-item {
+  margin: 8px 0;
+}
+
 #sideNav .navbar-nav .nav-item .nav-link {
   font-weight: 600;
   text-transform: uppercase;
@@ -59,6 +64,10 @@ h2 {
   margin-bottom: 1rem;
   color: #697565; /* Dark mode link color */
   transition: color 0.3s ease;
+  border: 2px solid #ECDFCC;
+  border-radius: 8px;
+  padding: 8px 15px;
+  margin: 5px 0;
 }
 
 #sideNav .navbar-nav .nav-item .nav-link:hover {
@@ -142,7 +151,7 @@ a:hover, a:focus, a:active {
   height: 70px;
   background-color: rgb(99, 99, 99);
   border-radius: 50%;
-  z-index: 1;
+  z-index: 100;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -180,12 +189,22 @@ a:hover, a:focus, a:active {
 }
 
 /* Warm Mode Overrides (Light Mode) */
+
+/* Fix Toggle Functionality */
+body.warm-mode {
+  background-color: #F5EFE7 !important;
+  color: #213555;
+}
+
 body.warm-mode #sideNav .navbar-nav .nav-item .nav-link {
-  color: #3E5879; /* Light mode link color */
+  color: #73aefb; /* Light mode link color */
+  border-color: #3E5879;
+
 }
 
 body.warm-mode #sideNav .navbar-nav .nav-item .nav-link:hover {
-  color: #213555; /* Light mode hover color */
+  color: #7434a5; /* Light mode hover color */
+  border-color: #213555;
 }
 
 body.warm-mode #sideNav .navbar-brand .img-profile {
@@ -196,6 +215,23 @@ body.warm-mode #sideNav .navbar-brand .img-profile {
 body.warm-mode #sideNav {
   background-color: transparent !important; /* Override previous background */
 }
+
+.img-profile {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 120px !important;
+  height: 120px !important;
+  z-index: 1000;
+  border: 3px solid #fff !important;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+body.warm-mode .img-profile {
+  border-color: #213555 !important;
+}
+
 /* Additional modern styles */
 .resume-item {
   background-color: rgba(255, 255, 255, 0.05) !important; /* Slight contrast */
