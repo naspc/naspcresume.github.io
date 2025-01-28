@@ -62,23 +62,22 @@ h2 {
   border-color: white;
   color: white;
 }
-
 #sideNav .navbar-nav .nav-item .nav-link {
+  color: white !important;
+  border: 2px solid white;
   font-weight: 600;
   text-transform: uppercase;
   font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: #ffffff; /* Dark mode link color */
-  transition: color 0.3s ease;
-  border: 2px solid #ECDFCC;
-  border-radius: 8px;
-  border-color: white;
   padding: 8px 15px;
   margin: 5px 0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
+/* Hover States */
 #sideNav .navbar-nav .nav-item .nav-link:hover {
-  color: #ff9900; /* Dark mode hover color */
+  color: #ff9900 !important;
+  border-color: #ff9900;
 }
 
 @media (min-width: 992px) {
@@ -108,6 +107,10 @@ h2 {
   transition: color 0.3s ease;
 }
 
+/* Add this at the bottom of your CSS */
+.navbar-dark .navbar-nav .nav-link {
+  color: inherit !important;
+}
 
 section.resume-section {
   background-color: transparent !important;
@@ -201,7 +204,6 @@ a:hover, a:focus, a:active {
   fill: rgb(255, 255, 255);
 }
 
-/* Warm Mode Overrides (Light Mode) */
 
 /* Fix Toggle Functionality */
 body.warm-mode {
@@ -209,10 +211,10 @@ body.warm-mode {
   color: #213555;
 }
 
+/* Warm Mode Override */
 body.warm-mode #sideNav .navbar-nav .nav-item .nav-link {
-  color: #73aefb; /* Light mode link color */
-  border-color: #3E5879;
-
+  color: #333 !important;
+  border-color: #333;
 }
 
 body.warm-mode #sideNav .navbar-nav .nav-item .nav-link:hover {
@@ -229,10 +231,6 @@ body.warm-mode #sideNav {
   background-color: transparent !important; /* Override previous background */
 }
 
-/* Warm Mode */
-.warm-mode #sideNav .nav-item .nav-link {
-  color: #333 !important; /* Dark color for warm mode */
-}
 
 .img-profile {
   position: fixed;
