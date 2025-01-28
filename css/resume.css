@@ -31,21 +31,12 @@ h2 {
   color: #ff4f4f; /* Subheading color for dark mode */
 }
 
-.list-social-icons a {
-  color: #697565; /* Icon color for dark mode */
-}
-
-.list-social-icons a:hover {
-  color: #ECDFCC; /* Icon hover color for dark mode */
-}
 
 .list-icons {
   font-size: 3rem;
 }
 
-.list-icons .list-inline-item i:hover {
-  color: #ECDFCC; /* Icon hover color for dark mode */
-}
+
 
 /* Transparent Navigation */
 #sideNav {
