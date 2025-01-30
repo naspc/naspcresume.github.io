@@ -16,46 +16,20 @@
      .catch(error => console.error('Error!', error.message))
  })
 
-// Toggle Mode Function
-function myFunction() {
+// Toggle Mode Function - Updated to use data-theme
+function toggleDarkMode() {
   const body = document.body;
-  body.classList.toggle("warm-mode");
-  
-  // Update elements that need direct style changes
-  const profileImg = document.querySelector('.img-profile');
-  const navLinks = document.querySelectorAll('#sideNav .nav-link');
-  
-  // Toggle profile border color
-  const borderColor = body.classList.contains("warm-mode") ? '#213555' : '#fff';
-  //profileImg.style.borderColor = borderColor;
-
-  // Force nav link color refresh
-  navLinks.forEach(link => {
-    link.style.color = ''; // Reset inline styles to let CSS handle it
-  });
-
-  // Save state
-  localStorage.setItem("warmMode", body.classList.contains("warm-mode"));
+  const currentTheme = body.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  body.setAttribute('data-theme', newTheme);
+  localStorage.setItem("theme", newTheme);
 }
 
-// Initialize on load
+// Initialize on load - Starts in dark mode
 document.addEventListener("DOMContentLoaded", () => {
-  const isWarmMode = localStorage.getItem("warmMode") === "true";
-  const body = document.body;
-  const navLinks = document.querySelectorAll('#sideNav .nav-link');
-  
-  // Set initial mode
-  body.classList.toggle("warm-mode", isWarmMode);
-  document.getElementById("darkModeToggle").checked = isWarmMode;
-
-  // Initialize profile border
-  const profileImg = document.querySelector('.img-profile');
-  //profileImg.style.borderColor = isWarmMode ? '#213555' : '#fff';
-
-  // Initialize nav colors
-  navLinks.forEach(link => {
-    link.style.color = ''; // Ensure CSS controls the color
-  });
+  const savedTheme = localStorage.getItem("theme") || 'dark';
+  document.body.setAttribute('data-theme', savedTheme);
+  document.getElementById("darkModeToggle").checked = (savedTheme === 'light');
 });
 
  // Slideshow functionality
@@ -111,4 +85,3 @@ document.addEventListener("DOMContentLoaded", () => {
  
  document.addEventListener('DOMContentLoaded', type);
 
- //cursor logic

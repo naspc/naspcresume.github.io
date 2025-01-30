@@ -23,6 +23,10 @@
   --border-color: rgba(178, 201, 173, 0.2);
 }
 
+body[data-theme="dark"] {
+  background-color: var(--background-color) !important;
+}
+
 body {
   font-family: 'Courier New', monospace;
   padding-top: 54px;
@@ -84,6 +88,7 @@ h1 {
 .resume-section {
   border-bottom: 1px solid var(--border-color);
   padding: 5rem 0 !important;
+  background-color: transparent !important;
 }
 
 .resume-item {
@@ -247,7 +252,7 @@ h1 {
 .automatic {
   font-size: 20px;
   font-weight: bold;
-  color: #ffffff; /* Primary color for automatic text */
+  color: var(--text-color) !important; /* Replace #ffffff */
   font-family: 'Courier New', monospace; /* Monospace font */
   white-space: nowrap; /* Prevent text from wrapping to the next line */
   overflow: hidden; /* Hide overflow text */
