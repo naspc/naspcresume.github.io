@@ -28,7 +28,7 @@ h2 {
   font-weight: 500;
   font-family: 'Saira Extra Condensed', sans-serif;
   font-size: 1.35rem;
-  color: #ff4f4f; /* Subheading color for dark mode */
+  color:white; /* Subheading color for dark mode */
 }
 
 
@@ -69,7 +69,7 @@ h2 {
 
 /* Hover State for light mode */
 #sideNav .navbar-nav .nav-item .nav-link:hover {
-  color: #ee00ff !important;
+  color: #0080ff30 !important;
   border-color: #ffffff00;
 }
 
