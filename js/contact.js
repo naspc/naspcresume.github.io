@@ -27,7 +27,7 @@ function myFunction() {
   
   // Toggle profile border color
   const borderColor = body.classList.contains("warm-mode") ? '#213555' : '#fff';
-  profileImg.style.borderColor = borderColor;
+  //profileImg.style.borderColor = borderColor;
 
   // Force nav link color refresh
   navLinks.forEach(link => {
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize profile border
   const profileImg = document.querySelector('.img-profile');
-  profileImg.style.borderColor = isWarmMode ? '#213555' : '#fff';
+  //profileImg.style.borderColor = isWarmMode ? '#213555' : '#fff';
 
   // Initialize nav colors
   navLinks.forEach(link => {
