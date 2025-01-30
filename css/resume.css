@@ -1,291 +1,156 @@
-/* Modernized CSS with Dark and Warm Tone Color Schemes */
+/* Modernized CSS with Color Schemes */
+:root {
+  /* Warm color palette */
+  --primary-color: #A2D2DF;
+  --secondary-color: #F6EFBD;
+  --accent-color: #E4C087;
+  --text-color: #333;
+  --background-color: #fff;
+  --card-bg: #F6EFBD;
+  --button-hover: #BC7C7C;
+  --border-color: rgba(162, 210, 223, 0.2);
+}
+
+[data-theme="dark"] {
+  /* Dark mode palette */
+  --primary-color: #91AC8F;
+  --secondary-color: #4B5945;
+  --accent-color: #B2C9AD;
+  --text-color: #e0e0e0;
+  --background-color: #2d332a;
+  --card-bg: #66785F;
+  --button-hover: #B2C9AD;
+  --border-color: rgba(178, 201, 173, 0.2);
+}
+
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Courier New', monospace;
   padding-top: 54px;
-  background-color: #072f78 !important; /* Single dark color for entire site */
-  color: white;
-  
+  background-color: var(--background-color) !important;
+  color: var(--text-color);
+  transition: all 0.3s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Saira Extra Condensed', sans-serif;
+  font-family:'Courier New', monospace;
   font-weight: 700;
   text-transform: uppercase;
-  color: #ECDFCC; /* Default heading color for dark mode */
+  color: var(--primary-color);
 }
 
 h1 {
-  font-size: 6rem;
-  line-height: 5.5rem;
-}
-
-h2 {
-  font-size: 3.5rem;
+  font-size: 4rem;
+  line-height: 4.5rem;
 }
 
 .subheading {
   text-transform: uppercase;
   font-weight: 500;
-  font-family: 'Saira Extra Condensed', sans-serif;
+  font-family: 'Courier New', monospace;
   font-size: 1.35rem;
-  color:white; /* Subheading color for dark mode */
+  color: var(--text-color);
 }
 
-
-.list-icons {
-  font-size: 3rem;
-}
-
-
-
-/* Transparent Navigation */
+/* Navigation Styles */
 #sideNav {
   background-color: transparent !important;
   border-right: none !important;
-  transition: background-color 0.3s ease;
-  
 }
 
-/* Nav Link Spacing and Borders */
-#sideNav .navbar-nav .nav-item {
-  margin: 8px 0;
-}
-
-.nav-item {
-  border-color: white;
-  color: white;
-}
 #sideNav .navbar-nav .nav-item .nav-link {
-  color: white !important;
-  border: 2px solid white;
+  color: var(--text-color) !important;
+  border: 2px solid var(--text-color);
   font-weight: 600;
   text-transform: uppercase;
-  font-size: 1.2rem;
   padding: 8px 15px;
   margin: 5px 0;
   border-radius: 8px;
   transition: all 0.3s ease;
 }
 
-/* Hover State for light mode */
 #sideNav .navbar-nav .nav-item .nav-link:hover {
-  color: #0080ff30 !important;
-  border-color: #ffffff00;
+  color: var(--button-hover) !important;
+  border-color: var(--button-hover);
 }
 
-@media (min-width: 992px) {
-  #sideNav {
-    text-align: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    width: 17rem;
-    height: 100vh;
-    background-color: transparent !important; /* Keep transparent */
-  }
-
-  #sideNav .navbar-brand .img-profile {
-    max-width: 10rem;
-    max-height: 10rem;
-    border: 0.5rem solid rgba(255, 255, 255, 0.2);
-    transition: border-color 0.3s ease;
-  }
-}
-
-/* Default/Dark Mode */
-#sideNav .nav-item .nav-link {
-  color: white !important;
-  transition: color 0.3s ease;
-}
-
-/* Add this at the bottom of your CSS */
-.navbar-dark .navbar-nav .nav-link {
-  color: inherit !important;
-}
-
-section.resume-section {
-  background-color: transparent !important;
-  border-bottom: 1px solid #3A3A3A; /* Subtle divider */
-  padding-top: 5rem !important;
-  padding-bottom: 5rem !important;
-}
-
-section.resume-section .resume-item .resume-date {
-  min-width: none;
-}
-
-@media (min-width: 768px) {
-  section.resume-section {
-    min-height: 100vh;
-  }
-
-  section.resume-section .resume-item .resume-date {
-    min-width: 18rem;
-  }
-}
-
-@media (min-width: 992px) {
-  section.resume-section {
-    padding-top: 3rem !important;
-    padding-bottom: 3rem !important;
-  }
-}
-
-.bg-primary {
-  background-color: #b22929 !important;
-}
-
-
-a {
-  color: #ffffff; /* Link color for dark mode */
-}
-
-a:hover, a:focus, a:active {
-  color: #23ebc3; /* Link hover color for dark mode */
-}
-
-/* Dark Mode Toggle Switch Styles */
-#darkModeToggle {
-  display: none;
-}
-
-/* Default Position (Desktop) */
-.switch {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid rgb(126, 126, 126);
-  box-shadow: 0px 0px 3px rgb(2, 2, 2) inset;
-  z-index: 1000; /* Ensure it's above other content */
-  background-color: rgba(99, 99, 99, 0.9); /* Slightly transparent */
-  backdrop-filter: blur(5px); /* Optional: Adds a blur effect */
-}
-
-/* Mobile Position */
-@media (max-width: 768px) {
-  .switch {
-    top: auto; /* Remove top positioning */
-    bottom: 20px; /* Move to bottom */
-    right: 20px; /* Keep it on the right */
-    width: 60px; /* Slightly smaller for mobile */
-    height: 60px;
-  }
-}
-
-
-.switch svg {
-  width: 1.2em;
-}
-
-.switch svg path {
-  fill: rgb(48, 48, 48);
-}
-
-#darkModeToggle:checked + .switch {
-  box-shadow: 0px 0px 1px rgb(151, 243, 255) inset,
-    0px 0px 2px rgb(151, 243, 255) inset, 0px 0px 10px rgb(151, 243, 255) inset,
-    0px 0px 40px rgb(151, 243, 255), 0px 0px 100px rgb(151, 243, 255),
-    0px 0px 5px rgb(151, 243, 255);
-  border: 2px solid rgb(255, 255, 255);
-  background-color: rgb(146, 180, 184);
-}
-
-#darkModeToggle:checked + .switch svg {
-  filter: drop-shadow(0px 0px 5px rgb(151, 243, 255));
-}
-
-#darkModeToggle:checked + .switch svg path {
-  fill: rgb(255, 255, 255);
-}
-
-
-/* Fix Toggle Functionality */
-body.warm-mode {
-  background-color: #F5EFE7 !important;
-  color: #213555;
-}
-
-/* Warm Mode Override */
-body.warm-mode #sideNav .navbar-nav .nav-item .nav-link {
-  color: #333 !important;
-  border-color: #333;
-}
-
-body.warm-mode #sideNav .navbar-nav .nav-item .nav-link:hover {
-  color: #7434a5; /* Light mode hover color */
-  border-color: #213555;
-}
-
-body.warm-mode #sideNav .navbar-brand .img-profile {
-  border-color: rgba(0, 0, 0, 0.2); /* Darker border for light mode */
-}
-
-/* Keep sidebar transparent in both modes */
-body.warm-mode #sideNav {
-  background-color: transparent !important; /* Override previous background */
-}
-
-
+/* Profile Image */
 .img-profile {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  width: 120px !important;
-  height: 120px !important;
-  z-index: 1000;
-  border: 3px solid #fff !important;
+  border: 3px solid var(--primary-color) !important;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   transition: all 0.3s ease;
 }
 
-body.warm-mode .img-profile {
-  border-color: #213555 !important;
+/* Sections */
+.resume-section {
+  border-bottom: 1px solid var(--border-color);
+  padding: 5rem 0 !important;
 }
 
-/* Additional modern styles */
 .resume-item {
-  background-color: rgba(255, 255, 255, 0.05) !important; /* Slight contrast */
-  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+  background-color: var(--card-bg) !important;
+  border: 1px solid var(--border-color);
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
 .resume-item:hover {
   transform: translateY(-5px);
-  transition: transform 0.3s ease;
 }
 
+/* Skills Icons */
 #skills .list-inline-item i {
-  color: #697565; /* Skill icon color for dark mode */
+  color: var(--primary-color);
+  transition: color 0.3s ease;
 }
 
 #skills .list-inline-item i:hover {
-  color: #ECDFCC; /* Skill icon hover color for dark mode */
+  color: var(--button-hover);
 }
 
-#interests .mySlides {
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Dark Mode Toggle */
+.switch {
+  background-color: var(--card-bg);
+  border: 2px solid var(--primary-color);
 }
 
-#resume .btn-primary {
-  background-color: #2973B2;
-  border: none;
+.switch svg path {
+  fill: var(--primary-color);
 }
 
-#resume .btn-primary:hover {
-  background-color: #48A6A7;
+/* Mobile Styles */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+
+  .img-profile {
+    width: 80px !important;
+    height: 80px !important;
+    top: 10px;
+    left: 10px;
+  }
+
+  .resume-section {
+    padding: 3rem 0 !important;
+  }
+
+  .resume-item {
+    padding: 15px;
+  }
+
+  #sideNav .navbar-nav .nav-item .nav-link {
+    font-size: 1rem;
+    padding: 6px 10px;
+  }
+}
+
+@media (hover: none) {
+  .resume-item:hover {
+    transform: none;
+  }
 }
 
 /* Glitch Button Styles */
@@ -318,9 +183,10 @@ body.warm-mode .img-profile {
 [class*="btn-glitch-"]:focus {
   animation-name: glitch;
   animation-duration: 0.2s;
-  background-color: rgb(0, 234, 255);
   color: black;
-  border: 1px solid rgb(0, 195, 255);
+  border: 1px solid rgb(252, 231, 94);
+  background-color: var(--accent-color);
+  border-color: var(--button-hover);
 }
 
 [class*="btn-glitch-"]:hover .text-decoration,
@@ -401,9 +267,6 @@ h1.mb-0 {
   font-size: inherit; /* Ensure both spans inherit the same font size */
   display: inline-block; /* Keep them inline */
   font-family: 'Courier New', monospace; /* Monospace font */
-  color: white;
+  color: var(--text-color) !important; /* ✅ Use theme variable */
 }
 
-.text-primary{
-  color: white;
-}
