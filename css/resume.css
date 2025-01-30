@@ -270,3 +270,56 @@ h1.mb-0 {
   color: var(--text-color) !important; /* ✅ Use theme variable */
 }
 
+/* Dark Mode Toggle Switch */
+#darkModeToggle {
+  display: none;
+}
+
+.switch {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 0 8px var(--border-color);
+  z-index: 1000;
+  background-color: var(--card-bg);
+  transition: all 0.3s ease;
+}
+
+.switch svg {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.switch path {
+  fill: var(--text-color);
+  transition: fill 0.3s ease;
+}
+
+/* Checked state (dark mode) */
+#darkModeToggle:checked + .switch {
+  background-color: var(--secondary-color);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 15px var(--button-hover);
+}
+
+#darkModeToggle:checked + .switch path {
+  fill: var(--button-hover);
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+  .switch {
+    width: 60px;
+    height: 60px;
+    top: 15px;
+    right: 15px;
+  }
+}
