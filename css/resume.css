@@ -73,7 +73,7 @@ h1 {
 }
 
 #sideNav .navbar-nav .nav-item .nav-link:hover {
-  color: var(--button-hover) !important;
+  color: black !important;
   border-color: var(--button-hover);
 }
 
