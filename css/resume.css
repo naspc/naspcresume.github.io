@@ -43,8 +43,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 4rem;
-  line-height: 4.5rem;
+  font-size: 3rem;
+  line-height: 3.5rem;
 }
 
 .subheading {
@@ -75,13 +75,6 @@ h1 {
 #sideNav .navbar-nav .nav-item .nav-link:hover {
   color: black !important;
   border-color: var(--button-hover);
-}
-
-/* Profile Image */
-.img-profile {
-  border: 3px solid var(--primary-color) !important;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
 }
 
 /* Sections */
@@ -262,7 +255,7 @@ h1 {
 
 
 h1.mb-0 {
-  font-size: 4rem; /* Adjust this value to match your desired size */
+  font-size: 3rem; /* Adjust this value to match your desired size */
   white-space: nowrap; /* Keep everything on one line */
   display: flex; /* Use flexbox for alignment */
   align-items: baseline; /* Align text to the baseline */
