@@ -1,4 +1,4 @@
- // Form submission handler
+/*  // Form submission handler
  const scriptURL = 'https://script.google.com/macros/s/AKfycbz98Zf588UgbglU7GQDfO6IxzTYdNmnyG5FcerGuqVU3yJ8K_YMymbq6FZZ1FRCSagOeg/exec'
  const form = document.forms['submit-to-google-sheet']
  const msg = document.getElementById("msg")
@@ -14,7 +14,7 @@
        form.reset()
      })
      .catch(error => console.error('Error!', error.message))
- })
+ }) */
 
 // Toggle Mode Function - Updated to use data-theme
 function toggleDarkMode() {
