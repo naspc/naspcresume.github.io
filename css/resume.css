@@ -269,6 +269,13 @@ h1.mb-0 {
 
 /* ========== MOBILE FIXES ========== */
 @media (max-width: 768px) {
+  /* Remove desktop left padding and ensure full width */
+  body {
+    padding-left: 0 !important;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
   /* Adjust dark mode toggle to avoid overlapping navbar toggler */
   .switch {
     left: 15px;
@@ -320,18 +327,38 @@ h1.mb-0 {
     left: 10px;
   }
 
+  /* Ensure sections take full width */
+  .container-fluid {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   .resume-section {
-    padding: 3rem 0 !important;
+    padding: 3rem 15px !important; /* Add horizontal padding for content */
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .resume-item {
     padding: 15px;
+    width: 100%; /* Ensure items are full width inside section */
+    margin-left: 0;
+    margin-right: 0;
   }
 
-  /* Ensure content doesn't overflow */
-  .container-fluid {
-    padding-left: 15px;
-    padding-right: 15px;
+  /* Ensure any Bootstrap row/col overrides don't add left margin */
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  [class*="col-"] {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
