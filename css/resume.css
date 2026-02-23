@@ -579,9 +579,9 @@ h1.mb-0 {
 
   /* Global automatic on mobile */
   .automatic {
-    width: 8ch !important;
-    min-width: 8ch !important;
-    max-width: 8ch !important;
+    width: 9ch !important;
+    min-width: 9ch !important;
+    max-width: 9ch !important;
     line-height: 1;          /* Already set, but ensure it's not overridden */
     height: 1em;
   }
@@ -594,14 +594,14 @@ h1.mb-0 {
     font-size: 1.6rem;
   }
   .about-card .automatic {
-    width: 7ch !important;
-    min-width: 7ch !important;
-    max-width: 7ch !important;
+    width: 9ch !important;
+    min-width: 9ch !important;
+    max-width: 9ch !important;
   }
   .automatic {
-    width: 8ch !important;
-    min-width: 8ch !important;
-    max-width: 8ch !important;
+    width: 9ch !important;
+    min-width: 9ch !important;
+    max-width: 9ch !important;
   }
 }
 
@@ -612,14 +612,14 @@ h1.mb-0 {
     font-size: 1.4rem;
   }
   .about-card .automatic {
-    width: 8ch !important;
-    min-width: 8ch !important;
-    max-width: 8ch !important;
+    width: 9ch !important;
+    min-width: 9ch !important;
+    max-width: 9ch !important;
   }
   .automatic {
-    width: 6ch !important;
-    min-width: 6ch !important;
-    max-width: 6ch !important;
+    width: 9ch !important;
+    min-width: 9ch !important;
+    max-width: 9ch !important;
   }
 }
 
