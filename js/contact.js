@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
  } */
 
  // Changing text logic 
- const words = ["Developer", "Programmer", "Student", "Athlete", "Gamer", "Leader"];
+ const words = ["Developer", "Student", "Athlete", "Gamer", "Leader"];
  let i = 0;
  let j = 0;
  let isDeleting = false;
