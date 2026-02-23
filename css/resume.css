@@ -367,3 +367,264 @@ h1.mb-0 {
     transform: none;
   }
 }
+
+/* ========== GRADIENT CARD EFFECT ========== */
+/* Apply to all resume items and about section container */
+.resume-item,
+.about-card {
+  position: relative;
+  background: var(--card-bg);
+  border-radius: 20px;
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none; /* Remove existing border */
+}
+
+/* Gradient border pseudo-element */
+.resume-item::before{
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(163deg, #70a388 0%, #0b6a2f5a 100%);
+  border-radius: 22px; /* Slightly larger to create border effect */
+  z-index: -1;
+  transition: all 0.3s ease;
+  opacity: 0; /* Hidden by default */
+}
+
+/* Show gradient border on hover */
+.resume-item:hover::before,
+.about-card:hover::before {
+  opacity: 1;
+  box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.3);
+}
+
+/* Scale down effect on hover (replaces translateY) */
+.resume-item:hover,
+.about-card:hover {
+  transform: scale(0.98);
+}
+
+/* Ensure content inside stays above pseudo-element */
+.resume-item > *,
+.about-card > * {
+  position: relative;
+  z-index: 2;
+}
+/* ===== ABOUT CARD (Adapted from Uiverse.io by Smit-Prajapati) ===== */
+.about-card.card {
+  width: 99%;               /* Full width of container */
+  max-width: 100%;
+  height: auto;              /* Let content determine height */
+  min-height: 500px;         /* Taller minimum height */
+  background: #243137;       /* Original card color */
+  position: relative;
+  display: block;            /* Change from grid to block for text flow */
+  border-radius: 10px;
+  overflow: hidden;          /* Keep overflow hidden */
+  transition: all 0.5s ease-in-out;
+  padding: 2.5rem;           /* Increased padding for more height */
+  color: #fff;               /* Ensure text is readable on dark bg */
+  box-sizing: border-box;
+  margin: 0;                 /* Remove any margin that could cause overflow */
+}
+
+/* Ensure no overflow on body or container */
+body {
+  overflow-x: hidden;        /* Prevent horizontal scroll */
+  width: 100%;
+  max-width: 100%;
+}
+
+.container-fluid {
+  overflow-x: hidden;        /* Prevent horizontal scroll in container */
+  width: 100%;
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Dark mode adjustments - affects all text inside about card */
+[data-theme="dark"] .about-card.card {
+  background: #1a1f23;       /* Slightly lighter dark for contrast */
+}
+
+[data-theme="dark"] .about-card .subheading,
+[data-theme="dark"] .about-card .subheading a,
+[data-theme="dark"] .about-card p,
+[data-theme="dark"] .about-card .list-social-icons a,
+[data-theme="dark"] .about-card h1 .text-primary,
+[data-theme="dark"] .about-card .automatic {
+  color: #e0e0e0 !important;  /* Light color for dark mode */
+}
+
+[data-theme="dark"] .about-card .text-primary,
+[data-theme="dark"] .about-card .automatic {
+  color: #B2C9AD !important;  /* Use dark mode accent color from your theme */
+}
+
+/* Light mode text colors */
+[data-theme="light"] .about-card .subheading,
+[data-theme="light"] .about-card .subheading a,
+[data-theme="light"] .about-card p,
+[data-theme="light"] .about-card .list-social-icons a {
+  color: #f0f0f0 !important;  /* Keep light text on dark background */
+}
+
+/* Border animation element */
+.about-card .border {
+  position: absolute;
+  inset: 0px;
+  border: 2px solid #bd9f67;
+  opacity: 0;
+  transform: rotate(10deg);
+  transition: all 0.5s ease-in-out;
+  pointer-events: none;      /* Allow clicking through */
+  z-index: 2;
+}
+
+/* Bottom text (optional) */
+.about-card .bottom-text {
+  position: absolute;
+  left: 50%;
+  bottom: 13px;
+  transform: translateX(-50%);
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 0px 5px 0px 8px;
+  color: #bd9f67;
+  background: #243137;
+  opacity: 0;
+  letter-spacing: 7px;
+  transition: all 0.5s ease-in-out;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Main content area */
+.about-card .content {
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* Center content vertically */
+}
+
+/* Make text taller/bigger */
+.about-card h1 {
+  font-size: 2.5rem;         /* Slightly larger */
+  line-height: 4rem;         /* Taller line height */
+  margin-bottom: 1.5rem;
+}
+
+.about-card .subheading {
+  font-size: 1.5rem;         /* Larger subheading */
+  line-height: 2rem;
+  margin-bottom: 2rem;
+}
+
+.about-card p {
+  font-size: 1.2rem;         /* Larger paragraph text */
+  line-height: 1.8rem;       /* Taller line height for readability */
+  margin-bottom: 2rem;
+}
+
+.about-card .automatic {
+  font-size: 2.5rem;         /* Match h1 size */
+  width: 11ch;               /* Slightly wider for larger font */
+}
+
+/* Hover effects */
+.about-card.card:hover {
+  border-radius: 0;
+  transform: scale(1.02);    /* Slight scale instead of 1.1 to avoid text overflow */
+}
+
+.about-card.card:hover .border {
+  inset: 15px;
+  opacity: 1;
+  transform: rotate(0);
+}
+
+.about-card.card:hover .bottom-text {
+  letter-spacing: 3px;
+  opacity: 1;
+  transform: translateX(-50%);
+}
+
+/* Override text colors inside card to ensure readability */
+.about-card .subheading,
+.about-card .subheading a,
+.about-card p,
+.about-card .list-social-icons a {
+  color: #f0f0f0 !important;  /* Light color for dark background */
+}
+
+.about-card .text-primary {
+  color: #bd9f67 !important;  /* Use gold from card */
+}
+
+.about-card .automatic {
+  color: #bd9f67 !important;
+}
+
+/* Social icons */
+.about-card .list-social-icons .fa-stack .fa-circle {
+  color: #bd9f67;            /* Gold background */
+}
+
+.about-card .list-social-icons .fa-stack .fa-inverse {
+  color: #243137;            /* Dark icon color */
+}
+
+/* Dark mode social icons */
+[data-theme="dark"] .about-card .list-social-icons .fa-stack .fa-circle {
+  color: #91AC8F;            /* Dark mode primary color */
+}
+
+[data-theme="dark"] .about-card .list-social-icons .fa-stack .fa-inverse {
+  color: #2d332a;            /* Dark mode background color */
+}
+
+/* Remove gradient pseudo-element from about card */
+.about-card::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .about-card.card {
+    padding: 1.5rem;
+    min-height: 450px;        /* Slightly smaller on mobile but still tall */
+  }
+  
+  .about-card.card:hover {
+    transform: scale(1.01);    /* Smaller scale on mobile */
+  }
+  
+  .about-card h1 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+  
+  .about-card .automatic {
+    font-size: 2.5rem;
+    width: 9ch;
+  }
+  
+  .about-card .subheading {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+  
+  .about-card p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
