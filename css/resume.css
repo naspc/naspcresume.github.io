@@ -601,58 +601,92 @@ body {
 @media (max-width: 768px) {
   .about-card.card {
     padding: 1rem;
-    min-height: auto;        /* Let height be determined by content */
+    min-height: auto;
     width: 100%;
     margin: 0;
-    overflow: visible;       /* Ensure no content gets clipped */
+    overflow: visible;
   }
 
-  /* Fix heading to prevent cutoff and shifting */
+  /* Fix heading to show full name */
   .about-card h1.mb-0 {
     display: flex;
-    flex-direction: column;   /* Stack name and typed text vertically */
-    align-items: flex-start;  /* Align to left */
-    font-size: 2rem;          /* Smaller base font */
+    flex-direction: column;   /* Stack elements vertically */
+    align-items: flex-start;
+    font-size: 2rem;
     line-height: 2.2rem;
-    white-space: normal;      /* Allow wrapping */
-    word-break: break-word;   /* Break long words if needed */
+    white-space: normal;
     width: 100%;
   }
 
-  /* Name styling */
+  /* Show full name - this was the problem */
   .about-card .text-primary {
     font-size: 2rem;
-    display: block;           /* Take full width */
+    display: block;
     width: 100%;
     white-space: normal;      /* Allow wrapping */
-    word-break: break-word;
-    margin-bottom: 0.25rem;
+    word-break: keep-all;     /* Keep words intact */
+    overflow: visible;
+    text-overflow: clip;
+    max-width: 100%;
   }
 
-  /* Auto-typing text - fixed width to prevent movement */
+  /* Ensure the span containing "Nassir Pedraza Cespedes," shows fully */
+  .about-card h1 .text-primary {
+    display: inline-block;
+    width: 100%;
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: keep-all;     /* Prevents breaking in middle of words */
+    hyphens: none;            /* Don't add hyphens */
+  }
+
+  /* Auto-typing text */
   .about-card .automatic {
     font-size: 2rem;
-    width: 8ch;               /* Fixed width for "Developer" */
+    width: 8ch;
     min-width: 8ch;
     display: inline-block;
     margin-left: 0;
-    white-space: nowrap;      /* Keep typed text on one line */
+    margin-top: 0.25rem;      /* Add small space when stacked */
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: clip;
     vertical-align: baseline;
   }
 
-  /* Subheading (location, email) */
+  /* Alternative if you want name and title on same line with proper wrapping */
+  .about-card h1.mb-0 {
+    display: flex;
+    flex-direction: row;      /* Keep on same line */
+    flex-wrap: wrap;          /* Allow wrapping if needed */
+    align-items: baseline;
+  }
+
+  .about-card .text-primary {
+    display: inline;
+    white-space: normal;
+    word-break: keep-all;
+    margin-right: 0.25rem;
+  }
+
+  .about-card .automatic {
+    display: inline;
+    width: auto;              /* Let it size naturally */
+    min-width: 8ch;
+    margin-top: 0;
+  }
+
+  /* Subheading */
   .about-card .subheading {
     font-size: 1rem;
     line-height: 1.4rem;
-    word-break: break-word;   /* Prevent email from overflowing */
+    word-break: break-word;
     margin-bottom: 1rem;
   }
 
   .about-card .subheading a {
     display: inline-block;
-    word-break: break-all;    /* Break email if needed */
+    word-break: break-all;
   }
 
   /* Paragraph text */
@@ -680,10 +714,10 @@ body {
   }
 
   .about-card.card:hover .border {
-    inset: 10px;             /* Smaller inset on mobile */
+    inset: 10px;
   }
 
-  /* Bottom text (optional) */
+  /* Bottom text */
   .about-card .bottom-text {
     font-size: 10px;
     bottom: 8px;
@@ -694,41 +728,47 @@ body {
     letter-spacing: 2px;
   }
 
-  /* Adjust content container */
   .about-card .content {
     width: 100%;
     overflow: visible;
   }
 
-  /* Dark mode toggle positioning - ensure it doesn't overlap */
+  /* Dark mode toggle */
   .switch {
     width: 50px;
     height: 50px;
     top: 10px;
     left: 10px;
-    z-index: 1100;           /* Higher than card */
+    z-index: 1100;
   }
 }
 
-/* Extra small devices (phones under 400px) */
+/* Extra small devices */
 @media (max-width: 400px) {
   .about-card h1.mb-0,
-  .about-card .text-primary,
-  .about-card .automatic {
+  .about-card .text-primary {
     font-size: 1.6rem;
     line-height: 1.8rem;
   }
 
   .about-card .automatic {
-    width: 7ch;              /* Slightly narrower for smallest screens */
+    font-size: 1.6rem;
+    width: 7ch;
+    min-width: 7ch;
+  }
+}
+
+/* Fix for very small devices */
+@media (max-width: 320px) {
+  .about-card h1.mb-0,
+  .about-card .text-primary {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
   }
 
-  .about-card .subheading {
-    font-size: 0.9rem;
-  }
-
-  .about-card p {
-    font-size: 0.85rem;
-    line-height: 1.3rem;
+  .about-card .automatic {
+    font-size: 1.4rem;
+    width: 6ch;
+    min-width: 6ch;
   }
 }
