@@ -597,34 +597,138 @@ body {
   content: none !important;
 }
 
-/* Mobile adjustments */
+/* Mobile adjustments for about card */
 @media (max-width: 768px) {
   .about-card.card {
-    padding: 1.5rem;
-    min-height: 450px;        /* Slightly smaller on mobile but still tall */
+    padding: 1rem;
+    min-height: auto;        /* Let height be determined by content */
+    width: 100%;
+    margin: 0;
+    overflow: visible;       /* Ensure no content gets clipped */
   }
-  
-  .about-card.card:hover {
-    transform: scale(1.01);    /* Smaller scale on mobile */
+
+  /* Fix heading to prevent cutoff and shifting */
+  .about-card h1.mb-0 {
+    display: flex;
+    flex-direction: column;   /* Stack name and typed text vertically */
+    align-items: flex-start;  /* Align to left */
+    font-size: 2rem;          /* Smaller base font */
+    line-height: 2.2rem;
+    white-space: normal;      /* Allow wrapping */
+    word-break: break-word;   /* Break long words if needed */
+    width: 100%;
   }
-  
-  .about-card h1 {
-    font-size: 2.5rem;
-    line-height: 3rem;
+
+  /* Name styling */
+  .about-card .text-primary {
+    font-size: 2rem;
+    display: block;           /* Take full width */
+    width: 100%;
+    white-space: normal;      /* Allow wrapping */
+    word-break: break-word;
+    margin-bottom: 0.25rem;
   }
-  
+
+  /* Auto-typing text - fixed width to prevent movement */
   .about-card .automatic {
-    font-size: 2.5rem;
-    width: 9ch;
+    font-size: 2rem;
+    width: 8ch;               /* Fixed width for "Developer" */
+    min-width: 8ch;
+    display: inline-block;
+    margin-left: 0;
+    white-space: nowrap;      /* Keep typed text on one line */
+    overflow: hidden;
+    text-overflow: clip;
+    vertical-align: baseline;
   }
-  
+
+  /* Subheading (location, email) */
   .about-card .subheading {
-    font-size: 1.2rem;
-    line-height: 1.6rem;
-  }
-  
-  .about-card p {
     font-size: 1rem;
-    line-height: 1.5rem;
+    line-height: 1.4rem;
+    word-break: break-word;   /* Prevent email from overflowing */
+    margin-bottom: 1rem;
+  }
+
+  .about-card .subheading a {
+    display: inline-block;
+    word-break: break-all;    /* Break email if needed */
+  }
+
+  /* Paragraph text */
+  .about-card p {
+    font-size: 0.95rem;
+    line-height: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Social icons */
+  .about-card .list-social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .about-card .list-social-icons .list-inline-item {
+    margin: 0.25rem;
+  }
+
+  /* Ensure border animation doesn't cause overflow */
+  .about-card .border {
+    inset: 0;
+  }
+
+  .about-card.card:hover .border {
+    inset: 10px;             /* Smaller inset on mobile */
+  }
+
+  /* Bottom text (optional) */
+  .about-card .bottom-text {
+    font-size: 10px;
+    bottom: 8px;
+    letter-spacing: 5px;
+  }
+
+  .about-card.card:hover .bottom-text {
+    letter-spacing: 2px;
+  }
+
+  /* Adjust content container */
+  .about-card .content {
+    width: 100%;
+    overflow: visible;
+  }
+
+  /* Dark mode toggle positioning - ensure it doesn't overlap */
+  .switch {
+    width: 50px;
+    height: 50px;
+    top: 10px;
+    left: 10px;
+    z-index: 1100;           /* Higher than card */
+  }
+}
+
+/* Extra small devices (phones under 400px) */
+@media (max-width: 400px) {
+  .about-card h1.mb-0,
+  .about-card .text-primary,
+  .about-card .automatic {
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+  }
+
+  .about-card .automatic {
+    width: 7ch;              /* Slightly narrower for smallest screens */
+  }
+
+  .about-card .subheading {
+    font-size: 0.9rem;
+  }
+
+  .about-card p {
+    font-size: 0.85rem;
+    line-height: 1.3rem;
   }
 }
