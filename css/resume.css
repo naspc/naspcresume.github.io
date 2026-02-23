@@ -1,6 +1,5 @@
 /* Modernized CSS with Color Schemes */
 :root {
-  /* Warm color palette */
   --primary-color: #A2D2DF;
   --secondary-color: #F6EFBD;
   --accent-color: #E4C087;
@@ -12,7 +11,6 @@
 }
 
 [data-theme="dark"] {
-  /* Dark mode palette */
   --primary-color: #91AC8F;
   --secondary-color: #4B5945;
   --accent-color: #B2C9AD;
@@ -27,16 +25,20 @@ body[data-theme="dark"] {
   background-color: var(--background-color) !important;
 }
 
+/* Base */
 body {
   font-family: 'Courier New', monospace;
   padding-top: 54px;
   background-color: var(--background-color) !important;
   color: var(--text-color);
   transition: all 0.3s ease;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family:'Courier New', monospace;
+  font-family: 'Courier New', monospace;
   font-weight: 700;
   text-transform: uppercase;
   color: var(--primary-color);
@@ -55,7 +57,15 @@ h1 {
   color: var(--text-color);
 }
 
-/* Navigation Styles */
+.container-fluid {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Navigation */
 #sideNav {
   background-color: transparent !important;
   border-right: none !important;
@@ -136,7 +146,6 @@ h1 {
   transition: fill 0.3s ease;
 }
 
-/* Checked state (dark mode) */
 #darkModeToggle:checked + .switch {
   background-color: var(--secondary-color);
   border-color: var(--accent-color);
@@ -147,9 +156,9 @@ h1 {
   fill: var(--button-hover);
 }
 
-/* Typing effect container - fixed width to prevent layout shift */
+/* ========== TYPING EFFECT - FIXED WIDTH ========== */
 .automatic {
-  font-size: 10px;
+  font-size: 10px; /* Base size, overridden in sections */
   font-weight: bold;
   color: var(--text-color) !important;
   font-family: 'Courier New', monospace;
@@ -157,27 +166,26 @@ h1 {
   overflow: hidden;
   display: inline-block;
   margin-left: 0.5rem;
-  width: 9ch; /* Width of longest word "Programmer" (9 chars) */
+  width: 9ch;          /* Width of longest word "Programmer" */
+  min-width: 9ch;
+  max-width: 9ch;
   text-align: left;
   vertical-align: baseline;
+  flex-shrink: 0;
+  flex-grow: 0;
 }
 
+/* Parent heading must respect fixed width */
 h1.mb-0 {
   font-size: 3rem;
   white-space: nowrap;
   display: flex;
   align-items: baseline;
-  flex-wrap: wrap; /* Allow wrapping on very small screens if needed */
+  flex-wrap: wrap;
+  gap: 0.25rem;
 }
 
-.text-primary, .automatic {
-  font-size: inherit;
-  display: inline-block;
-  font-family: 'Courier New', monospace;
-  color: var(--text-color) !important;
-}
-
-/* Glitch Button Styles (unchanged) */
+/* ========== GLITCH BUTTONS ========== */
 [class*="btn-glitch-"] {
   display: inline-block;
   font-family: "VT323", monospace;
@@ -214,12 +222,7 @@ h1.mb-0 {
 }
 
 [class*="btn-glitch-"]:hover .text-decoration,
-[class*="btn-glitch-"]:focus .text-decoration {
-  animation-name: blink;
-  animation-duration: 0.1s;
-  animation-iteration-count: infinite;
-}
-
+[class*="btn-glitch-"]:focus .text-decoration,
 [class*="btn-glitch-"]:hover .decoration,
 [class*="btn-glitch-"]:focus .decoration {
   animation-name: blink;
@@ -238,150 +241,28 @@ h1.mb-0 {
 }
 
 @keyframes glitch {
-  25% {
-    background-color: red;
-    transform: translateX(-10px);
-    letter-spacing: 10px;
-  }
-  35% {
-    background-color: green;
-    transform: translateX(10px);
-  }
-  59% {
-    opacity: 0;
-  }
-  60% {
-    background-color: blue;
-    transform: translateX(-10px);
-    filter: blur(5px);
-  }
-  100% {
-    background-color: yellow;
-    filter: blur(5px);
-  }
+  25% { background-color: red; transform: translateX(-10px); letter-spacing: 10px; }
+  35% { background-color: green; transform: translateX(10px); }
+  59% { opacity: 0; }
+  60% { background-color: blue; transform: translateX(-10px); filter: blur(5px); }
+  100% { background-color: yellow; filter: blur(5px); }
 }
 
 @keyframes blink {
-  50% {
-    opacity: 0;
-  }
+  50% { opacity: 0; }
 }
 
-/* ========== MOBILE FIXES ========== */
-@media (max-width: 768px) {
-  /* Remove desktop left padding and ensure full width */
-  body {
-    padding-left: 0 !important;
-    width: 100%;
-    overflow-x: hidden;
-  }
-
-  /* Adjust dark mode toggle to avoid overlapping navbar toggler */
-  .switch {
-    left: 15px;
-    right: auto;
-    top: 15px;
-    width: 60px;
-    height: 60px;
-  }
-
-  /* Make navbar collapse background solid and readable */
-  #sideNav .navbar-collapse {
-    background-color: var(--card-bg);
-    padding: 1rem;
-    border-radius: 0 0 10px 10px;
-    margin-top: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  }
-
-  /* Ensure nav links have proper contrast and spacing */
-  #sideNav .navbar-nav .nav-item .nav-link {
-    color: var(--text-color) !important;
-    border-color: var(--primary-color);
-    margin: 8px 0;
-    text-align: center;
-  }
-
-  /* Adjust heading sizes */
-  h1 {
-    font-size: 2.5rem;
-    line-height: 3rem;
-  }
-
-  .automatic {
-    font-size: 2.5rem; /* Match h1 size */
-    width: 9ch; /* Keep width fixed */
-    margin-left: 0.25rem;
-  }
-
-  h1.mb-0 {
-    flex-wrap: wrap; /* Allow name and typed part to stack if needed */
-    justify-content: center;
-    text-align: center;
-  }
-
-  .img-profile {
-    width: 80px !important;
-    height: 80px !important;
-    top: 10px;
-    left: 10px;
-  }
-
-  /* Ensure sections take full width */
-  .container-fluid {
-    width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .resume-section {
-    padding: 3rem 15px !important; /* Add horizontal padding for content */
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .resume-item {
-    padding: 15px;
-    width: 100%; /* Ensure items are full width inside section */
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  /* Ensure any Bootstrap row/col overrides don't add left margin */
-  .row {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  [class*="col-"] {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media (hover: none) {
-  .resume-item:hover {
-    transform: none;
-  }
-}
-
-/* ========== GRADIENT CARD EFFECT ========== */
-/* Apply to all resume items and about section container */
-.resume-item,
-.about-card {
+/* ========== GRADIENT CARD EFFECT (for resume items only) ========== */
+.resume-item {
   position: relative;
   background: var(--card-bg);
   border-radius: 20px;
   z-index: 1;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: none; /* Remove existing border */
+  border: none;
 }
 
-/* Gradient border pseudo-element */
-.resume-item::before{
+.resume-item::before {
   content: '';
   position: absolute;
   top: -2px;
@@ -389,67 +270,53 @@ h1.mb-0 {
   right: -2px;
   bottom: -2px;
   background: linear-gradient(163deg, #70a388 0%, #0b6a2f5a 100%);
-  border-radius: 22px; /* Slightly larger to create border effect */
+  border-radius: 22px;
   z-index: -1;
   transition: all 0.3s ease;
-  opacity: 0; /* Hidden by default */
+  opacity: 0;
 }
 
-/* Show gradient border on hover */
-.resume-item:hover::before,
-.about-card:hover::before {
+.resume-item:hover::before {
   opacity: 1;
   box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.3);
 }
 
-/* Scale down effect on hover (replaces translateY) */
-.resume-item:hover,
-.about-card:hover {
+.resume-item:hover {
   transform: scale(0.98);
 }
 
-/* Ensure content inside stays above pseudo-element */
-.resume-item > *,
-.about-card > * {
+.resume-item > * {
   position: relative;
   z-index: 2;
 }
-/* ===== ABOUT CARD (Adapted from Uiverse.io by Smit-Prajapati) ===== */
+
+/* ========== ABOUT CARD (Black & Gold) ========== */
 .about-card.card {
-  width: 99%;               /* Full width of container */
+  width: 100%;
   max-width: 100%;
-  height: auto;              /* Let content determine height */
-  min-height: 500px;         /* Taller minimum height */
-  background: #243137;       /* Original card color */
+  height: auto;
+  min-height: 500px;
+  background: #243137;
   position: relative;
-  display: block;            /* Change from grid to block for text flow */
+  display: block;
   border-radius: 10px;
-  overflow: hidden;          /* Keep overflow hidden */
+  overflow: hidden;
   transition: all 0.5s ease-in-out;
-  padding: 2.5rem;           /* Increased padding for more height */
-  color: #fff;               /* Ensure text is readable on dark bg */
+  padding: 2.5rem;
+  color: #fff;
   box-sizing: border-box;
-  margin: 0;                 /* Remove any margin that could cause overflow */
+  margin: 0;
 }
 
-/* Ensure no overflow on body or container */
-body {
-  overflow-x: hidden;        /* Prevent horizontal scroll */
-  width: 100%;
-  max-width: 100%;
+/* Remove gradient from about card */
+.about-card::before {
+  display: none !important;
+  content: none !important;
 }
 
-.container-fluid {
-  overflow-x: hidden;        /* Prevent horizontal scroll in container */
-  width: 100%;
-  max-width: 100%;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-/* Dark mode adjustments - affects all text inside about card */
+/* Dark mode about card */
 [data-theme="dark"] .about-card.card {
-  background: #1a1f23;       /* Slightly lighter dark for contrast */
+  background: #1a1f23;
 }
 
 [data-theme="dark"] .about-card .subheading,
@@ -458,23 +325,23 @@ body {
 [data-theme="dark"] .about-card .list-social-icons a,
 [data-theme="dark"] .about-card h1 .text-primary,
 [data-theme="dark"] .about-card .automatic {
-  color: #e0e0e0 !important;  /* Light color for dark mode */
+  color: #e0e0e0 !important;
 }
 
 [data-theme="dark"] .about-card .text-primary,
 [data-theme="dark"] .about-card .automatic {
-  color: #B2C9AD !important;  /* Use dark mode accent color from your theme */
+  color: #B2C9AD !important;
 }
 
-/* Light mode text colors */
+/* Light mode text colors (keep light on dark bg) */
 [data-theme="light"] .about-card .subheading,
 [data-theme="light"] .about-card .subheading a,
 [data-theme="light"] .about-card p,
 [data-theme="light"] .about-card .list-social-icons a {
-  color: #f0f0f0 !important;  /* Keep light text on dark background */
+  color: #f0f0f0 !important;
 }
 
-/* Border animation element */
+/* Border animation */
 .about-card .border {
   position: absolute;
   inset: 0px;
@@ -482,11 +349,10 @@ body {
   opacity: 0;
   transform: rotate(10deg);
   transition: all 0.5s ease-in-out;
-  pointer-events: none;      /* Allow clicking through */
+  pointer-events: none;
   z-index: 2;
 }
 
-/* Bottom text (optional) */
 .about-card .bottom-text {
   position: absolute;
   left: 50%;
@@ -504,7 +370,6 @@ body {
   z-index: 3;
 }
 
-/* Main content area */
 .about-card .content {
   transition: all 0.5s ease-in-out;
   position: relative;
@@ -512,37 +377,63 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;   /* Center content vertically */
+  justify-content: center;
 }
 
-/* Make text taller/bigger */
+/* Text sizing */
 .about-card h1 {
-  font-size: 2.5rem;         /* Slightly larger */
-  line-height: 4rem;         /* Taller line height */
+  font-size: 2.5rem;
+  line-height: 4rem;
   margin-bottom: 1.5rem;
 }
 
 .about-card .subheading {
-  font-size: 1.5rem;         /* Larger subheading */
+  font-size: 1.5rem;
   line-height: 2rem;
   margin-bottom: 2rem;
 }
 
 .about-card p {
-  font-size: 1.2rem;         /* Larger paragraph text */
-  line-height: 1.8rem;       /* Taller line height for readability */
+  font-size: 1.2rem;
+  line-height: 1.8rem;
   margin-bottom: 2rem;
 }
 
+/* Override automatic inside about card */
 .about-card .automatic {
-  font-size: 2.5rem;         /* Match h1 size */
-  width: 11ch;               /* Slightly wider for larger font */
+  font-size: 2.5rem;
+  width: 11ch;
+  min-width: 11ch;
+  max-width: 11ch;
+  color: #bd9f67 !important;
+  margin-left: 0.25rem;
 }
 
-/* Hover effects */
+.about-card .text-primary {
+  color: #bd9f67 !important;
+}
+
+/* Social icons */
+.about-card .list-social-icons .fa-stack .fa-circle {
+  color: #bd9f67;
+}
+
+.about-card .list-social-icons .fa-stack .fa-inverse {
+  color: #243137;
+}
+
+[data-theme="dark"] .about-card .list-social-icons .fa-stack .fa-circle {
+  color: #91AC8F;
+}
+
+[data-theme="dark"] .about-card .list-social-icons .fa-stack .fa-inverse {
+  color: #2d332a;
+}
+
+/* Hover */
 .about-card.card:hover {
   border-radius: 0;
-  transform: scale(1.02);    /* Slight scale instead of 1.1 to avoid text overflow */
+  transform: scale(1.02);
 }
 
 .about-card.card:hover .border {
@@ -557,146 +448,112 @@ body {
   transform: translateX(-50%);
 }
 
-/* Override text colors inside card to ensure readability */
-.about-card .subheading,
-.about-card .subheading a,
-.about-card p,
-.about-card .list-social-icons a {
-  color: #f0f0f0 !important;  /* Light color for dark background */
-}
-
-.about-card .text-primary {
-  color: #bd9f67 !important;  /* Use gold from card */
-}
-
-.about-card .automatic {
-  color: #bd9f67 !important;
-}
-
-/* Social icons */
-.about-card .list-social-icons .fa-stack .fa-circle {
-  color: #bd9f67;            /* Gold background */
-}
-
-.about-card .list-social-icons .fa-stack .fa-inverse {
-  color: #243137;            /* Dark icon color */
-}
-
-/* Dark mode social icons */
-[data-theme="dark"] .about-card .list-social-icons .fa-stack .fa-circle {
-  color: #91AC8F;            /* Dark mode primary color */
-}
-
-[data-theme="dark"] .about-card .list-social-icons .fa-stack .fa-inverse {
-  color: #2d332a;            /* Dark mode background color */
-}
-
-/* Remove gradient pseudo-element from about card */
-.about-card::before {
-  display: none !important;
-  content: none !important;
-}
-
-/* Mobile adjustments for about card */
+/* ========== MOBILE FIXES ========== */
 @media (max-width: 768px) {
-  .about-card.card {
-    padding: 1rem;
-    min-height: auto;
-    width: 100%;
-    margin: 0;
-    overflow: visible;
+  body {
+    padding-left: 0 !important;
   }
 
-  /* Fix heading to show full name */
+  .switch {
+    left: 15px;
+    right: auto;
+    top: 15px;
+    width: 50px;
+    height: 50px;
+    z-index: 1100;
+  }
+
+  #sideNav .navbar-collapse {
+    background-color: var(--card-bg);
+    padding: 1rem;
+    border-radius: 0 0 10px 10px;
+    margin-top: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  #sideNav .navbar-nav .nav-item .nav-link {
+    margin: 8px 0;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+
+  .img-profile {
+    width: 80px !important;
+    height: 80px !important;
+    top: 10px;
+    left: 10px;
+  }
+
+  .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .resume-section {
+    padding: 3rem 15px !important;
+  }
+
+  .resume-item {
+    padding: 15px;
+    width: 100%;
+  }
+
+  .row, [class*="col-"] {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* About card mobile */
+  .about-card.card {
+    padding: 1.5rem;
+    min-height: auto;
+  }
+
   .about-card h1.mb-0 {
-    display: flex;
-    flex-direction: column;   /* Stack elements vertically */
+    flex-direction: column;
     align-items: flex-start;
     font-size: 2rem;
     line-height: 2.2rem;
-    white-space: normal;
-    width: 100%;
   }
 
-  /* Show full name - this was the problem */
   .about-card .text-primary {
     font-size: 2rem;
     display: block;
     width: 100%;
-    white-space: normal;      /* Allow wrapping */
-    word-break: keep-all;     /* Keep words intact */
-    overflow: visible;
-    text-overflow: clip;
-    max-width: 100%;
-  }
-
-  /* Ensure the span containing "Nassir Pedraza Cespedes," shows fully */
-  .about-card h1 .text-primary {
-    display: inline-block;
-    width: 100%;
-    white-space: normal;
-    word-wrap: break-word;
-    word-break: keep-all;     /* Prevents breaking in middle of words */
-    hyphens: none;            /* Don't add hyphens */
-  }
-
-  /* Auto-typing text */
-  .about-card .automatic {
-    font-size: 2rem;
-    width: 8ch;
-    min-width: 8ch;
-    display: inline-block;
-    margin-left: 0;
-    margin-top: 0.25rem;      /* Add small space when stacked */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: clip;
-    vertical-align: baseline;
-  }
-
-  /* Alternative if you want name and title on same line with proper wrapping */
-  .about-card h1.mb-0 {
-    display: flex;
-    flex-direction: row;      /* Keep on same line */
-    flex-wrap: wrap;          /* Allow wrapping if needed */
-    align-items: baseline;
-  }
-
-  .about-card .text-primary {
-    display: inline;
     white-space: normal;
     word-break: keep-all;
-    margin-right: 0.25rem;
+    margin-bottom: 0.25rem;
   }
 
   .about-card .automatic {
-    display: inline;
-    width: auto;              /* Let it size naturally */
-    min-width: 8ch;
-    margin-top: 0;
+    font-size: 2rem;
+    width: 8ch !important;
+    min-width: 8ch !important;
+    max-width: 8ch !important;
+    margin: 0;
   }
 
-  /* Subheading */
   .about-card .subheading {
     font-size: 1rem;
     line-height: 1.4rem;
     word-break: break-word;
-    margin-bottom: 1rem;
   }
 
   .about-card .subheading a {
-    display: inline-block;
     word-break: break-all;
   }
 
-  /* Paragraph text */
   .about-card p {
     font-size: 0.95rem;
     line-height: 1.4rem;
-    margin-bottom: 1.5rem;
   }
 
-  /* Social icons */
   .about-card .list-social-icons {
     display: flex;
     flex-wrap: wrap;
@@ -704,20 +561,10 @@ body {
     gap: 0.5rem;
   }
 
-  .about-card .list-social-icons .list-inline-item {
-    margin: 0.25rem;
-  }
-
-  /* Ensure border animation doesn't cause overflow */
-  .about-card .border {
-    inset: 0;
-  }
-
   .about-card.card:hover .border {
     inset: 10px;
   }
 
-  /* Bottom text */
   .about-card .bottom-text {
     font-size: 10px;
     bottom: 8px;
@@ -728,47 +575,52 @@ body {
     letter-spacing: 2px;
   }
 
-  .about-card .content {
-    width: 100%;
-    overflow: visible;
-  }
-
-  /* Dark mode toggle */
-  .switch {
-    width: 50px;
-    height: 50px;
-    top: 10px;
-    left: 10px;
-    z-index: 1100;
+  /* Global automatic on mobile */
+  .automatic {
+    width: 8ch !important;
+    min-width: 8ch !important;
+    max-width: 8ch !important;
   }
 }
 
-/* Extra small devices */
 @media (max-width: 400px) {
-  .about-card h1.mb-0,
-  .about-card .text-primary {
-    font-size: 1.6rem;
-    line-height: 1.8rem;
-  }
-
+  .about-card h1,
+  .about-card .text-primary,
   .about-card .automatic {
     font-size: 1.6rem;
-    width: 7ch;
-    min-width: 7ch;
+  }
+  .about-card .automatic {
+    width: 7ch !important;
+    min-width: 7ch !important;
+    max-width: 7ch !important;
+  }
+  .automatic {
+    width: 7ch !important;
+    min-width: 7ch !important;
+    max-width: 7ch !important;
   }
 }
 
-/* Fix for very small devices */
 @media (max-width: 320px) {
-  .about-card h1.mb-0,
-  .about-card .text-primary {
-    font-size: 1.4rem;
-    line-height: 1.6rem;
-  }
-
+  .about-card h1,
+  .about-card .text-primary,
   .about-card .automatic {
     font-size: 1.4rem;
-    width: 6ch;
-    min-width: 6ch;
+  }
+  .about-card .automatic {
+    width: 6ch !important;
+    min-width: 6ch !important;
+    max-width: 6ch !important;
+  }
+  .automatic {
+    width: 6ch !important;
+    min-width: 6ch !important;
+    max-width: 6ch !important;
+  }
+}
+
+@media (hover: none) {
+  .resume-item:hover {
+    transform: none;
   }
 }
